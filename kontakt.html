@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="images/logok.png">
+
+<title>Kontakt</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+.contact-hero {
+  background: url('images/kontakt-tlo.jpg') center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.contact-hero h1 {
+  position: relative;
+  font-size: 42px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.contact-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background: #7de7c8;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #5fd3b1;
+}
+
+.contact-alt {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR (IDENTYCZNY JAK W INNYCH STRONACH) -->
+<div class="navbar">
+
+  <div class="logo">
+    <a href="index.html">
+      <img src="images/logok.png" alt="Logo">
+    </a>
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Start</a>
+    <a href="ebooki.html">E-booki</a>
+    <a href="blog.html">Blog</a>
+    <a href="onas.html">O nas</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+  <div class="cart">
+    <a href="#cart">
+      🛒 <span id="cart-count">0</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- MIĘTOWY PASEK -->
+<section class="start-bar">
+  <h2>Kontakt</h2>
+</section>
+
+
+<!-- TREŚĆ -->
+<section class="contact-section">
+
+  <p>
+    Masz pytanie dotyczące ebooka, naszej podróży albo chcesz po prostu napisać „cześć”?<br>
+    Śmiało — chętnie odpowiemy.
+  </p>
+
+  <form action="https://formspree.io/f/your-id" method="POST">
+
+    <input type="text" name="name" placeholder="Imię" required>
+
+    <input type="email" name="email" placeholder="Email" required>
+
+    <select name="topic">
+      <option>Ebook</option>
+      <option>Współpraca</option>
+      <option>Inne</option>
+    </select>
+
+    <textarea name="message" rows="6" placeholder="Wiadomość"></textarea>
+
+    <button type="submit">Napisz do nas</button>
+
+  </form>
+
+  <div class="contact-alt">
+<a href="mailto:emkanostress@gmail.com?subject=Zapytanie ze strony">emkanostress@gmail.com</a>  </div>
+
+</section>
+
+<!-- STOPKA -->
+
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <!-- LEWA STRONA -->
+    <div class="footer-box">
+      <h3>Emka No Stress</h3>
+      <p>
+        Tworzymy praktyczne przewodniki podróżnicze, które pomagają podróżować taniej, prościej i&nbsp;bez stresu.
+      </p>
+    </div>
+
+    <!-- MENU -->
+    <div class="footer-box">
+      <a href="index.html">Start</a>
+      <a href="#ebooki">E-booki</a>
+      <a href="#blog">Blog</a>
+      <a href="onas.html">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+
+    <!-- KONTAKT -->
+    <div class="footer-box">
+      <h4>Kontakt</h4>
+
+      <a href="mailto:emkanostress@gmail.com">
+        emkanostress@gmail.com
+
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Emka No Stress. Wszystkie prawa zastrzeżone.</p>
+  </div>
+
+</footer>
+</body>
+</html>
+</html>

@@ -15,75 +15,34 @@
 
 <body>
 
+
 <!-- NAVBAR -->
 <div class="navbar">
-
-  <!-- LOGO -->
   <div class="logo">
-    <img src="images/logok.png" alt="Logo">
-  </div>
-
-  <!-- MENU -->
-  <div class="nav-links">
-    <a href="#">Start</a>
-    <a href="ebooki.html">E-booki</a>
-    <a href="blog.html">Blog</a>
-    <a href="onas.html">O nas</a>   
-	<a href="kontakt.html">Kontakt</a>
-  </div>
-
-  <!-- KOSZYK -->
-  <div class="cart">
-    <a href="#cart">
-      🛒 <span id="cart-count">0</span>
+    <a href="index.html">
+      <img src="images/logok.png" alt="Logo">
     </a>
   </div>
 
-</div>
-
-<!-- SEKCJA START -->
-<section class="start-bar">
-  <h2>Start</h2>
-</section>
-
-<!-- OBRAZ NA CAŁĄ SZEROKOŚĆ -->
-<div class="hero-slider">
-
-  <div class="slide active" style="background-image: url('images/tlo1.png');"></div>
-  <div class="slide" style="background-image: url('images/tlo2.png');"></div>
-  <div class="slide" style="background-image: url('images/tlo3.png');"></div>
-
-  <div class="hero-overlay">
-    <h2>
-      Cześć!<br>
-      Nazywamy się Eliza i Marek<br>
-      i zapraszamy Was do naszego podróżniczego świata!
-    </h2>
-
-    <p class="hover-text">
-      Znajdziecie tu praktyczne e-booki, sprawdzone triki podróżnicze<br>
-      i wskazówki, jak podróżować taniej, prościej i bez stresu —<br>
-      niezależnie od kierunku.
-    </p>
+  <div class="nav-links">
+    <a href="index.html">Start</a>
+    <a href="ebooki.html">E-booki</a>
+    <a href="index.html#blog">Blog</a>
+    <a href="onas.html">O nas</a>
+    <a href="kontakt.html">Kontakt</a>
   </div>
 
-<script>
-const slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 4000); // zmiana co 4 sekundy
-</script>
-
-
+  <div class="cart">
+    <a href="#cart">🛒 <span id="cart-count">0</span></a>
+  </div>
 </div>
 
+<!-- START BAR -->
+<section class="start-bar">
+  <h2>E-booki</h2>
+</section>
 
-
-<!-- TUTAJ WSTAWIASZ EBOOK -->
+<!-- EBOOK KAFEL -->
 <section class="ebook-section">
 
   <div class="ebook-card">
@@ -99,6 +58,8 @@ setInterval(() => {
       <p>
         Kompletny e-book, dzięki któremu samodzielnie zorganizujesz wyjazd na Wyspy Zielonego Przylądka!
       </p>
+
+
       <a href="ebook.html" class="ebook-btn">
         Przejdź do szczegółów
       </a>
@@ -109,38 +70,31 @@ setInterval(() => {
 
 </section>
 
-
-
-
+<!-- FOOTER -->
 <footer class="footer">
 
   <div class="footer-content">
 
-    <!-- LEWA STRONA -->
     <div class="footer-box">
       <h3>Emka No Stress</h3>
       <p>
-        Tworzymy praktyczne przewodniki podróżnicze, które pomagają podróżować taniej, prościej i&nbsp;bez stresu.
+        Tworzymy praktyczne przewodniki podróżnicze, które pomagają podróżować taniej, prościej i bez stresu.
       </p>
     </div>
 
-    <!-- MENU -->
     <div class="footer-box">
       <a href="index.html">Start</a>
       <a href="ebooki.html">E-booki</a>
-      <a href="blog.html">Blog</a>
+      <a href="#blog">Blog</a>
       <a href="onas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
     </div>
 
-    <!-- KONTAKT -->
     <div class="footer-box">
       <h4>Kontakt</h4>
-
       <a href="mailto:emkanostress@gmail.com">
 emkanostress@gmail.com
       </a>
-
     </div>
 
   </div>
@@ -150,21 +104,3 @@ emkanostress@gmail.com
   </div>
 
 </footer>
-
-</body>
-</html>
-
-
-
-
-
-<script>
-const slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 4000);
-</script>
