@@ -4,6 +4,20 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 .hero-slider {
@@ -38,7 +52,8 @@ body {
 }
 
 
-/* tekst na środku */
+
+/* TEKST NA OBRAZIE srodku */
 .hero-overlay {
   position: absolute;
   top: 40%;
@@ -48,7 +63,7 @@ body {
   color: white;
   max-width: 800px;
   padding: 20px;
-  z-index: 2;
+  z-index: 2; /*TODO or comment*/
 }
 
 .hero-overlay .hover-text {
@@ -188,17 +203,7 @@ body {
   background: rgba(0,0,0,0.35);
 }
 
-/* TEKST NA OBRAZIE */
-.hero-overlay {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  padding: 20px;
-}
+
 
 .hero-overlay h2 {
   font-family: 'Cormorant Garamond', serif;
@@ -412,6 +417,101 @@ body {
   text-decoration: underline;
 }
 
+/* ===== BLOG ===== */
+.blog-intro {
+  max-width: 900px;
+  margin: 70px auto 35px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.blog-intro h1 {
+  margin: 0 0 18px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 46px;
+  font-weight: 600;
+  color: #0f3b33;
+}
+
+.blog-intro p {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.blog-categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  max-width: 900px;
+  margin: 0 auto 55px;
+  padding: 0 20px;
+}
+
+.blog-categories span {
+  padding: 10px 18px;
+  background: #f6fbfa;
+  border: 1px solid #bff3e4;
+  border-radius: 999px;
+  color: #0f3b33;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 90px;
+  padding: 0 20px;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s ease;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.blog-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.blog-content {
+  padding: 26px;
+}
+
+.blog-content h3 {
+  margin: 0 0 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  color: #0f3b33;
+}
+
+.blog-content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #444;
+}
+
 .ebook-section {
   padding: 100px 20px;
   display: flex;
@@ -538,4 +638,584 @@ body {
 .buy-btn.big {
   font-size: 18px;
   padding: 18px 32px;
+}
+
+.contact-hero {
+  background: url('images/kontakt-tlo.jpg') center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.contact-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.contact-hero h1 {
+  position: relative;
+  font-size: 42px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.contact-section {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #333;
+}
+
+form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea, select {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  background: #7de7c8;
+  border: none;
+  padding: 14px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #5fd3b1;
+}
+
+.contact-alt {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #666;
+}
+
+
+
+.success-wrapper {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.success-card {
+  max-width: 700px;
+  width: 100%;
+  background: white;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.success-card h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #1f3d3a;
+}
+
+.success-card p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 16px 34px;
+  background: #1f3d3a;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.loading {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-message {
+  color: #b00020;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.success-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .blog-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .blog-intro h1 {
+    font-size: 34px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   RESPONSIVE LAYOUT
+========================= */
+@media (max-width: 1400px) {
+  .hero-slider,
+  .full-image {
+    height: min(760px, 78vh);
+  }
+
+  .navbar {
+    padding: 18px 42px;
+  }
+
+  .nav-links {
+    gap: 34px;
+  }
+
+  .ebook-card {
+    max-width: 1120px;
+    padding: 56px;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 18px;
+    padding: 18px 28px;
+  }
+
+  .logo img {
+    height: 82px;
+  }
+
+  .nav-links {
+    order: 3;
+    flex-basis: 100%;
+    gap: 24px;
+    justify-content: center;
+  }
+
+  .cart {
+    margin-left: auto;
+  }
+
+  .hero-slider,
+  .full-image {
+    height: min(680px, 74vh);
+  }
+
+  .hero-overlay {
+    width: min(88vw, 760px);
+  }
+
+  .hero-overlay h2 {
+    font-size: clamp(36px, 5vw, 48px);
+  }
+
+  .hover-text {
+    font-size: clamp(20px, 2.4vw, 24px);
+  }
+
+  .ebook-section {
+    padding: 72px 24px;
+  }
+
+  .ebook-card {
+    gap: 36px;
+    padding: 44px;
+  }
+
+  .ebook-image img {
+    width: min(360px, 36vw);
+  }
+
+  .ebook-btn {
+    margin: 28px 0 0;
+  }
+
+  .ebook-hero-container {
+    gap: 40px;
+  }
+
+  .ebook-cover {
+    width: min(340px, 38vw);
+  }
+}
+
+@media (max-width: 900px) {
+  .start-bar {
+    padding: 20px 16px;
+  }
+
+  .start-bar h2 {
+    font-size: clamp(27px, 5vw, 32px);
+    line-height: 1.2;
+  }
+
+  .hero-slider,
+  .full-image {
+    height: 620px;
+  }
+
+  .hero-overlay {
+    top: 50%;
+    width: min(90vw, 680px);
+  }
+
+  .hero-overlay h2 {
+    font-size: clamp(32px, 6vw, 42px);
+    line-height: 1.25;
+  }
+
+  .hover-text {
+    opacity: 1;
+    font-size: clamp(18px, 3vw, 22px);
+  }
+
+  .ebook-card,
+  .ebook-hero-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ebook-card {
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .ebook-image img,
+  .ebook-cover {
+    width: min(360px, 84vw);
+  }
+
+  .ebook-content p,
+  .ebook-hero-text p {
+    max-width: 620px;
+  }
+
+  .section {
+    margin: 60px auto;
+  }
+
+  .section.dark {
+    border-radius: 16px;
+  }
+
+  .footer {
+    padding: 48px 28px 20px;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-box:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 18px;
+  }
+
+  .logo img {
+    height: 72px;
+  }
+
+  .nav-links {
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+    letter-spacing: 0.4px;
+    padding: 6px 4px;
+  }
+
+  .dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cart {
+    font-size: 18px;
+    margin-left: 0;
+  }
+
+  .hero-slider,
+  .full-image {
+    height: 540px;
+  }
+
+  .hero-overlay {
+    padding: 18px 12px;
+  }
+
+  .hero-overlay h2 {
+    font-size: clamp(28px, 8vw, 38px);
+  }
+
+  .hover-text {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .blog-intro {
+    margin: 48px auto 28px;
+  }
+
+  .blog-intro h1 {
+    font-size: clamp(32px, 7vw, 40px);
+  }
+
+  .blog-intro p,
+  .contact-section p,
+  .ebook-content p,
+  .ebook-hero-text p {
+    font-size: 17px;
+  }
+
+  .blog-grid {
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  .ebook-section {
+    padding: 52px 16px;
+  }
+
+  .ebook-card {
+    padding: 32px 22px;
+    border-radius: 16px;
+  }
+
+  .ebook-content h2,
+  .ebook-hero-text h1 {
+    font-size: clamp(30px, 7vw, 34px);
+  }
+
+  .track img {
+    width: 220px !important;
+    height: 290px !important;
+  }
+
+  .success-wrapper {
+    min-height: auto;
+    padding: 56px 16px;
+  }
+
+  .success-card {
+    padding: 36px 22px;
+  }
+
+  .success-card h1 {
+    font-size: 34px;
+  }
+
+  .success-card p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 560px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cart {
+    margin-left: 0;
+  }
+
+  .nav-links {
+    order: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 6px;
+  }
+
+  .hero-slider,
+  .full-image {
+    height: 500px;
+  }
+
+  .hero-overlay {
+    width: 94vw;
+  }
+
+  .hero-overlay h2 {
+    font-size: clamp(25px, 8vw, 32px);
+  }
+
+  .hover-text {
+    font-size: 16px;
+  }
+
+  .start-bar h2 {
+    font-size: 26px;
+  }
+
+  .blog-categories {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+  }
+
+  .blog-categories span {
+    flex: 0 0 auto;
+  }
+
+  .blog-card img {
+    height: 210px;
+  }
+
+  .blog-content {
+    padding: 22px;
+  }
+
+  .about-container {
+    width: 100%;
+    padding: 0 18px;
+  }
+
+  .about-container h3 {
+    font-size: 25px;
+  }
+
+  .about-container p {
+    font-size: 15.5px;
+  }
+
+  .track {
+    gap: 10px;
+    animation-duration: 45s;
+  }
+
+  .track img {
+    width: 180px !important;
+    height: 240px !important;
+    border-radius: 10px;
+  }
+
+  .contact-section,
+  .section {
+    margin: 44px auto;
+    padding: 0 16px;
+  }
+
+  .section.dark {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 36px 18px;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 42px 22px 18px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .footer-box {
+    align-items: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-links {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-slider,
+  .full-image {
+    height: 460px;
+  }
+
+  .ebook-card {
+    padding: 28px 16px;
+  }
+
+  .success-card h1 {
+    font-size: 30px;
+  }
+}
+
+@media (hover: none) {
+  .hero-overlay .hover-text,
+  .hover-text {
+    opacity: 1;
+  }
 }
