@@ -8,8 +8,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <title>Emka No Stress</title>
 
-<!-- PODPIĘCIE CSS -->
 <link rel="stylesheet" href="style.css">
+
+<script>
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+
+setInterval(() => {
+  slides[index].classList.remove("active");
+  index = (index + 1) % slides.length;
+  slides[index].classList.add("active");
+}, 4000);
+
+document.getElementById("buy-btn").addEventListener("click", async () => {
+  const res = await fetch("https://api.emkanostress.com/create-checkout");
+  const data = await res.json();
+  window.location.href = data.url;
+});
+</script>
 
 </head>
 
@@ -72,28 +88,7 @@
       niezależnie od kierunku.
     </p>
   </div>
-
-<script>
-const slides = document.querySelectorAll(".slide");
-let index = 0;
-
-setInterval(() => {
-  slides[index].classList.remove("active");
-  index = (index + 1) % slides.length;
-  slides[index].classList.add("active");
-}, 4000);
-
-document.getElementById("buy-btn").addEventListener("click", async () => {
-  const res = await fetch("https://api.emkanostress.com/create-checkout");
-  const data = await res.json();
-  window.location.href = data.url;
-});
-</script>
-
-
 </div>
-
-
 
 <!-- TUTAJ WSTAWIASZ EBOOK -->
 <section class="ebook-section">
@@ -111,8 +106,9 @@ document.getElementById("buy-btn").addEventListener("click", async () => {
       <p>
         Kompletny e-book, dzięki któremu samodzielnie zorganizujesz wyjazd na Wyspy Zielonego Przylądka!
 		<a
-		  href="https://buy.stripe.com/8x24gt18ebL05dQaUJ5wI00"
+		  href="https://buy.stripe.com/test_8x24gt18ebL05dQaUJ5wI00"
 		  class="buy-btn"
+		  id="buy-btn"
 		>
 		  Kup teraz!
 		</a>

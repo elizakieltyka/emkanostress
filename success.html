@@ -85,6 +85,49 @@
 
 </style>
 
+<script>
+(async () => {
+
+  // GET SESSION ID FROM URL
+  const params = new URLSearchParams(window.location.search);
+  const session_id = params.get("session_id");
+
+  // SAFETY CHECK
+  if (!session_id) {
+    document.getElementById("loading").innerHTML =
+      "<p>Brak identyfikatora sesji.</p>";
+    return;
+  }
+
+  try {
+    // VERIFY PAYMENT ON YOUR CLOUDFLARE WORKER
+    const res = await fetch(
+      `https://api.emkanostress.com/verify-session?session_id=${session_id}`
+    );
+
+    const data = await res.json();
+
+    // SUCCESS
+    if (data.downloadUrl) {
+      document.getElementById("loading").innerHTML = `
+        <a class="download-btn" href="${data.downloadUrl}">
+          Pobierz ebook
+        </a>
+      `;
+
+    } else {
+      document.getElementById("loading").innerHTML =
+        "<p>Nie udało się zweryfikować płatności.</p>";
+    }
+
+  } catch (err) {
+    document.getElementById("loading").innerHTML =
+      "<p>Wystąpił błąd połączenia.</p>";
+  }
+
+})();
+</script>
+
 </head>
 
 <body>
@@ -188,49 +231,6 @@
   </div>
 
 </footer>
-
-<script>
-(async () => {
-
-  // GET SESSION ID FROM URL
-  const params = new URLSearchParams(window.location.search);
-  const session_id = params.get("session_id");
-
-  // SAFETY CHECK
-  if (!session_id) {
-    document.getElementById("loading").innerHTML =
-      "<p>Brak identyfikatora sesji.</p>";
-    return;
-  }
-
-  try {
-    // VERIFY PAYMENT ON YOUR CLOUDFLARE WORKER
-    const res = await fetch(
-      `https://api.emkanostress.com/verify-session?session_id=${session_id}`
-    );
-
-    const data = await res.json();
-
-    // SUCCESS
-    if (data.downloadUrl) {
-      document.getElementById("loading").innerHTML = `
-        <a class="download-btn" href="${data.downloadUrl}">
-          Pobierz ebook
-        </a>
-      `;
-
-    } else {
-      document.getElementById("loading").innerHTML =
-        "<p>Nie udało się zweryfikować płatności.</p>";
-    }
-
-  } catch (err) {
-    document.getElementById("loading").innerHTML =
-      "<p>Wystąpił błąd połączenia.</p>";
-  }
-
-})();
-</script>
 
 </body>
 </html>
