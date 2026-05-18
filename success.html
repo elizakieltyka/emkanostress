@@ -130,14 +130,6 @@
       Przygotowujemy bezpieczny dostęp do e-booka.
     </p>
 
-    <button
-      id="downloadBtn"
-      class="download-btn"
-      style="display:none;"
-    >
-      Pobierz e-book
-    </button>
-
     <div
       id="loading"
       class="loading"
@@ -206,13 +198,12 @@
 
   // SAFETY CHECK
   if (!session_id) {
-    document.getElementById("downloadArea").innerHTML =
+    document.getElementById("loading").innerHTML =
       "<p>Brak identyfikatora sesji.</p>";
     return;
   }
 
   try {
-
     // VERIFY PAYMENT ON YOUR CLOUDFLARE WORKER
     const res = await fetch(
       `https://api.emkanostress.com/verify-session?session_id=${session_id}`
@@ -222,25 +213,20 @@
 
     // SUCCESS
     if (data.downloadUrl) {
-
-      document.getElementById("downloadArea").innerHTML = `
+      document.getElementById("loading").innerHTML = `
         <a class="download-btn" href="${data.downloadUrl}">
           Pobierz ebook
         </a>
       `;
 
     } else {
-
-      document.getElementById("downloadArea").innerHTML =
+      document.getElementById("loading").innerHTML =
         "<p>Nie udało się zweryfikować płatności.</p>";
-
     }
 
   } catch (err) {
-
-    document.getElementById("downloadArea").innerHTML =
+    document.getElementById("loading").innerHTML =
       "<p>Wystąpił błąd połączenia.</p>";
-
   }
 
 })();
