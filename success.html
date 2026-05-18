@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" href="images/logok.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+
+<title>Płatność zakończona | Emka No Stress</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+.success-wrapper {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+}
+
+.success-card {
+  max-width: 700px;
+  width: 100%;
+  background: white;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.success-card h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 20px;
+  color: #1f3d3a;
+}
+
+.success-card p {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 16px 34px;
+  background: #1f3d3a;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.loading {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-message {
+  color: #b00020;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.success-icon {
+  font-size: 70px;
+  margin-bottom: 20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <div class="logo">
+    <img src="images/logok.png" alt="Logo">
+  </div>
+
+  <div class="nav-links">
+    <a href="index.html">Start</a>
+
+    <div class="dropdown">
+      <a href="ebooki.html">E-booki</a>
+
+      <div class="dropdown-content">
+        <a href="cv_ebook.html">Cabo Verde</a>
+      </div>
+    </div>
+
+    <a href="blog.html">Blog</a>
+    <a href="onas.html">O nas</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+</div>
+
+<!-- SUCCESS SECTION -->
+<section class="success-wrapper">
+
+  <div class="success-card">
+
+    <div class="success-icon">
+      ✅
+    </div>
+
+    <h1>Dziękujemy za zakup!</h1>
+
+    <p>
+      Twoja płatność została poprawnie zaksięgowana.
+      Przygotowujemy bezpieczny dostęp do e-booka.
+    </p>
+
+    <button
+      id="downloadBtn"
+      class="download-btn"
+      style="display:none;"
+    >
+      Pobierz e-book
+    </button>
+
+    <div
+      id="loading"
+      class="loading"
+    >
+      Weryfikowanie płatności...
+    </div>
+
+    <div
+      id="errorMessage"
+      class="error-message"
+      style="display:none;"
+    ></div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <div class="footer-box">
+      <h3>Emka No Stress</h3>
+
+      <p>
+        Tworzymy praktyczne przewodniki podróżnicze,
+        które pomagają podróżować taniej,
+        prościej i bez stresu.
+      </p>
+    </div>
+
+    <div class="footer-box">
+      <a href="index.html">Start</a>
+      <a href="ebooki.html">E-booki</a>
+      <a href="blog.html">Blog</a>
+      <a href="onas.html">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+
+    <div class="footer-box">
+      <h4>Kontakt</h4>
+
+      <a href="mailto:emkanostress@gmail.com">
+        emkanostress@gmail.com
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 Emka No Stress.
+      Wszystkie prawa zastrzeżone.
+    </p>
+  </div>
+
+</footer>
+
+<script>
+(async () => {
+
+  // GET SESSION ID FROM URL
+  const params = new URLSearchParams(window.location.search);
+  const session_id = params.get("session_id");
+
+  // SAFETY CHECK
+  if (!session_id) {
+    document.getElementById("downloadArea").innerHTML =
+      "<p>Brak identyfikatora sesji.</p>";
+    return;
+  }
+
+  try {
+
+    // VERIFY PAYMENT ON YOUR CLOUDFLARE WORKER
+    const res = await fetch(
+      `https://api.emkanostress.com/verify-session?session_id=${session_id}`
+    );
+
+    const data = await res.json();
+
+    // SUCCESS
+    if (data.downloadUrl) {
+
+      document.getElementById("downloadArea").innerHTML = `
+        <a class="download-btn" href="${data.downloadUrl}">
+          Pobierz ebook
+        </a>
+      `;
+
+    } else {
+
+      document.getElementById("downloadArea").innerHTML =
+        "<p>Nie udało się zweryfikować płatności.</p>";
+
+    }
+
+  } catch (err) {
+
+    document.getElementById("downloadArea").innerHTML =
+      "<p>Wystąpił błąd połączenia.</p>";
+
+  }
+
+})();
+</script>
+
+</body>
+</html>

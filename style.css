@@ -98,6 +98,39 @@ body {
   color: #000;
 }
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 130px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.dropdown-content a:hover {
+  background: #f2f2f2;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 /* KOSZYK */
 .cart {
   font-size: 20px;
@@ -434,4 +467,75 @@ body {
 .ebook-btn:hover {
   background: #5fd3b1;
   transform: translateY(-2px);
+}
+
+
+.ebook-hero-container {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.ebook-cover {
+  width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.ebook-hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #0f3b33;
+}
+
+.ebook-hero-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.section.dark {
+  background: #f6fbfa;
+  padding: 60px 20px;
+  border-radius: 20px;
+}
+
+.section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #0f3b33;
+}
+
+.list {
+  margin-top: 20px;
+  line-height: 2;
+}
+
+.cta {
+  text-align: center;
+}
+
+.buy-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 26px;
+  background: #7de7c8;
+  color: #0f3b33;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.buy-btn.big {
+  font-size: 18px;
+  padding: 18px 32px;
 }

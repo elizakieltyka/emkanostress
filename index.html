@@ -26,7 +26,13 @@
   <!-- MENU -->
   <div class="nav-links">
     <a href="#">Start</a>
-    <a href="ebooki.html">E-booki</a>
+      <div class="dropdown">
+  <a href="ebooki.html">E-booki</a>
+
+  <div class="dropdown-content">
+    <a href="cv_ebook.html">Cabo Verde</a>
+  </div>
+</div>
     <a href="blog.html">Blog</a>
     <a href="onas.html">O nas</a>   
 	<a href="kontakt.html">Kontakt</a>
@@ -98,10 +104,12 @@ setInterval(() => {
 
       <p>
         Kompletny e-book, dzięki któremu samodzielnie zorganizujesz wyjazd na Wyspy Zielonego Przylądka!
-      </p>
-      <a href="ebook.html" class="ebook-btn">
-        Przejdź do szczegółów
-      </a>
+		<a
+		  href="https://buy.stripe.com/8x24gt18ebL05dQaUJ5wI00"
+		  class="buy-btn"
+		>
+		  Kup teraz!
+		</a>
 
     </div>
 
@@ -167,4 +175,12 @@ setInterval(() => {
   index = (index + 1) % slides.length;
   slides[index].classList.add("active");
 }, 4000);
+
+document.getElementById("buy-btn").addEventListener("click", async () => {
+  const res = await fetch("https://api.emkanostress.com/create-checkout");
+
+  const data = await res.json();
+
+  window.location.href = data.url;
+});
 </script>
