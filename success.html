@@ -88,42 +88,55 @@
 <script>
 (async () => {
 
-  // GET SESSION ID FROM URL
   const params = new URLSearchParams(window.location.search);
   const session_id = params.get("session_id");
 
-  // SAFETY CHECK
+  const container = document.getElementById("loading");
+
   if (!session_id) {
-    document.getElementById("loading").innerHTML =
-      "<p>Brak identyfikatora sesji.</p>";
+    container.innerHTML = "<p>Brak identyfikatora sesji.</p>";
     return;
   }
 
-  try {
-    // VERIFY PAYMENT ON YOUR CLOUDFLARE WORKER
-    const res = await fetch(
-      `https://api.emkanostress.com/verify-session?session_id=${session_id}`
-    );
+  container.innerHTML = "<p>Weryfikuję płatność...</p>";
 
-    const data = await res.json();
+  async function checkPayment(retries = 10) {
+    try {
+      const res = await fetch(
+        `https://api.emkanostress.com/verify-session?session_id=${session_id}`
+      );
 
-    // SUCCESS
-    if (data.downloadUrl) {
-      document.getElementById("loading").innerHTML = `
-        <a class="download-btn" href="${data.downloadUrl}">
-          Pobierz ebook
-        </a>
-      `;
+      const data = await res.json();
 
-    } else {
-      document.getElementById("loading").innerHTML =
-        "<p>Nie udało się zweryfikować płatności.</p>";
+      // SUCCESS
+      if (data.downloadUrl) {
+		  container.innerHTML = `
+			<a class="download-btn" href="${data.downloadUrl}">
+			  Pobierz ebook
+			</a>
+			<p>Link ważny przez 1 godzinę i jednorazowy.</p>
+		  `;
+        return;
+      }
+
+      // NOT READY YET (IMPORTANT FIX)
+      if (retries > 0) {
+        container.innerHTML = "<p>Finalizacja płatności... proszę czekać</p>";
+        setTimeout(() => checkPayment(retries - 1), 2000);
+        return;
+      }
+
+      // FAILED AFTER RETRIES
+      container.innerHTML =
+        "<p>Nie udało się zweryfikować płatności. Jeśli zapłaciłeś, odśwież stronę.</p>";
+
+    } catch (err) {
+      container.innerHTML =
+        "<p>Wystąpił błąd połączenia. Spróbuj odświeżyć stronę.</p>";
     }
-
-  } catch (err) {
-    document.getElementById("loading").innerHTML =
-      "<p>Wystąpił błąd połączenia.</p>";
   }
+
+  checkPayment();
 
 })();
 </script>
