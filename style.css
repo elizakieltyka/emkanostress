@@ -3,7 +3,7 @@
 ========================= */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  background: #f8f5ef;
   color: #333;
   line-height: 1.5;
   overflow-x: hidden;
@@ -81,10 +81,13 @@ img {
 ========================= */
 .navbar {
   display: flex;
+  background: #cffff0; 
   align-items: center;
-  padding: 20px 60px;
-  background: #fff;
+  padding: 0px 20px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 9999;
 }
 
 .nav-toggle,
@@ -94,22 +97,24 @@ img {
 
 /* LOGO */
 .logo img {
-  height: 100px;
+  height: 110px;
+  margin-left:30px;
 }
 
 /* MENU */
 .nav-links {
   display: flex;
-  gap: 50px;
-  flex: 1;
+  gap: 70px;
+  background: #cffff0; 
+  flex:1;
   justify-content: center;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
+  color:#008B8B;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 30px;
   letter-spacing: 1px;
   transition: 0.2s;
 }
@@ -128,7 +133,7 @@ img {
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
+  background: #f8f5ef;
   min-width: 130px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   z-index: 1000;
@@ -149,25 +154,6 @@ img {
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-/* =========================
-   START BAR
-========================= */
-.start-bar {
-  width: 100%;
-  padding: 25px 0;
-  text-align: center;
-  background: linear-gradient(90deg, #bff3e4, #7de7c8, #bff3e4);
-}
-
-.start-bar h2 {
-  margin: 0;
-  font-size: 34px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: #0f3b33;
-  font-family: 'Cormorant Garamond', serif;
 }
 
 /* =========================
@@ -253,6 +239,7 @@ img {
     flex-direction: column;
     gap: 15px;
     padding: 20px;
+	
   }
 
   .nav-links {
@@ -273,18 +260,19 @@ img {
 
 /* ===== FOOTER (MIĘTOWY) ===== */
 .footer {
-  background: linear-gradient(135deg, #0f3b33, #145c4f);
+  background: #1b7a5c;
   color: #fff;
-  padding: 60px 40px 20px;
+  padding: 60px 5px 20px;
   margin-top: 80px;
 }
 
-/* UKŁAD — NAJWAŻNIEJSZA POPRAWKA */
+/* UKŁAD  */
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-  align-items: start; /* 🔥 wyrównanie do góry */
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+  padding: 0 10px;
+  align-items: start;
 }
 
 /* KOLUMNY */
@@ -321,6 +309,22 @@ img {
   color: #fff;
 }
 
+.footer-box:nth-child(1) {
+  justify-self: start;
+  text-align: left;
+  padding-left: 75px;
+}
+
+.footer-box:nth-child(2) {
+  justify-self: center;
+  text-align: center;
+}
+
+.footer-box:nth-child(3) {
+  justify-self: end;
+  text-align: left;
+  padding-right: 75px;
+}
 /* DÓŁ STOPKI */
 .footer-bottom {
   text-align: center;
@@ -331,65 +335,58 @@ img {
   padding-top: 15px;
 }
 
-/* ===== O NAS ===== */
-.about-container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;   
+/* ===== O NAS NOWY UKŁAD ===== */
+.about-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  max-width: 1400px;
+  margin: 80px 0 80px 0;  
+  padding-left: 60px;         
+  padding-right: 20px;
+  align-items: center;
 }
-
-
-.about-container h3 {
+/* TEKST */
+.about-text h3 {
   font-family: 'Cormorant Garamond', serif;
   font-size: 28px;
+  font-weight: 700;
   margin-top: 40px;
-  color: #0f3b33;
+  margin-left: 10px;
+  text-align: center;
+  color: #008B8B;;
 }
 
-.about-container p {
-  font-size: 16px;
+.about-text p {
+  font-size: 20px;
   line-height: 1.8;
   color: #333;
+  margin-bottom: 16px;
 }
 
-.about-image {
-  width: 250px;        /* małe zdjęcie */
-  height: auto;
-  display: block;
-  margin: 25px auto;
-  border-radius: 12px;
+/* ===== FADE SLIDER ===== */
+.about-fade-slider {
+  position: relative;
+  width: 150%;
+  height: 700px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-left:170px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
 }
 
-.slider {
+.about-fade-slider img {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  overflow: hidden;
-}
-
-.track {
-  display: flex;
-  gap: 15px;
-  width: max-content;
-  animation: move 35s linear infinite;
-}
-
-.track img {
-  width: 280px !important;
-  height: 360px !important;
+  height: 100%;
   object-fit: cover;
-  flex-shrink: 0;
-  display: block;
-  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
 }
 
-.track:hover {
-  animation-play-state: paused;
-}
-
-/* ANIMACJA */
-@keyframes move {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.about-fade-slider img.active {
+  opacity: 1;
 }
 
 .contact-alt a {
@@ -424,26 +421,6 @@ img {
   font-size: 18px;
   line-height: 1.7;
   color: #444;
-}
-
-.blog-categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-  max-width: 900px;
-  margin: 0 auto 55px;
-  padding: 0 20px;
-}
-
-.blog-categories span {
-  padding: 10px 18px;
-  background: #f6fbfa;
-  border: 1px solid #bff3e4;
-  border-radius: 999px;
-  color: #0f3b33;
-  font-size: 15px;
-  font-weight: 600;
 }
 
 .blog-grid {
@@ -500,8 +477,8 @@ img {
 .ebook-section {
   padding: 100px 20px;
   display: flex;
+  background: transparent;
   justify-content: center;
-  background: #f7fbfa;
 }
 
 .ebook-card {
@@ -590,7 +567,7 @@ img {
 }
 
 .section.dark {
-  background: #f6fbfa;
+  background: #f1ece3;
   padding: 60px 20px;
   border-radius: 20px;
 }
@@ -957,13 +934,14 @@ button:hover {
   }
 
   .nav-links a {
-    font-size: 15px;
+    font-size:22px;
     letter-spacing: 0.4px;
     padding: 6px 4px;
   }
 
   .dropdown-content {
     left: 50%;
+	background: #f8f5ef;
     transform: translateX(-50%);
   }
 
@@ -1279,7 +1257,7 @@ button:hover {
     display: block;
     width: 100%;
     padding: 12px 10px;
-    font-size: 17px;
+    font-size: 22px;
   }
 
   .dropdown {
@@ -1303,4 +1281,74 @@ button:hover {
     padding: 10px;
   }
 
+}
+
+
+
+/* ===== FAQ ===== */
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size:40px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #008B8B;
+}
+
+.faq {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* pytanie */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 18px 20px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0f3b33;
+}
+
+/* plusik */
+.icon {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+/* odpowiedź */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+/* aktywne */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 20px 18px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg); /* + zmienia się w X */
 }
