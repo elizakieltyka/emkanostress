@@ -82,20 +82,7 @@
 <section class="success-wrapper">
 
   <div class="success-card" id="success-card-div">
-
-    <div class="success-icon">✅</div>
-
-    <h1>Dziękujemy za zakup!</h1>
-
-    <p>
-      Twoja płatność została poprawnie zaksięgowana.
-      Przygotowujemy bezpieczny dostęp do e-booka.
-    </p>
-
-    <div id="loading" class="loading">
-      Weryfikowanie płatności...
-    </div>
-
+  .
   </div>
 
 </section>
@@ -105,17 +92,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const params = new URLSearchParams(window.location.search);
   const session_id = params.get("session_id");
-  const container = document.getElementById("loading");
 
-  if (!container) return;
 
   if (!session_id) {
     document.getElementById("success-card-div").innerHTML = ":)";
-    container.innerHTML = "<p>Brak identyfikatora sesji.</p>";
     return;
-  }
+  } else {
+	document.getElementById("success-card-div").innerHTML = `
+	  <div class="success-icon">✅</div>
 
-  container.innerHTML = "<p>Weryfikuję płatność...</p>";
+	  <h1>Dziękujemy za zakup!</h1>
+
+	  <p>
+		Na podany przy zakupie e-mail wysłaliśmy link do pobrania e-booka w trzech formatach.
+	  </p>
+	`;
+  }
 
   async function checkPayment(retries = 10) {
     try {
@@ -126,27 +118,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
 
       if (data.downloadUrl) {
-        container.innerHTML = `
-          <a class="download-btn" href="${data.downloadUrl}">
-            Pobierz ebook
-          </a>
-          <p>Link ważny przez 1 godzinę i jednorazowy.</p>
-        `;
         return;
       }
 
       if (retries > 0) {
-        container.innerHTML = "<p>Finalizacja płatności... proszę czekać</p>";
         setTimeout(() => checkPayment(retries - 1), 2000);
         return;
       }
 
-      container.innerHTML =
-        "<p>Nie udało się zweryfikować płatności. Jeśli zapłaciłeś, odśwież stronę.</p>";
 
     } catch (err) {
-      container.innerHTML =
-        "<p>Błąd połączenia. Spróbuj odświeżyć stronę.</p>";
     }
   }
 
