@@ -62,67 +62,64 @@
 <!-- TREŚĆ -->
 <section class="about-section">
 
-  <div class="about-layout">
+  <!-- TŁO (SLIDER NA CAŁĄ SZEROKOŚĆ) -->
+  <div class="about-bg">
 
-    <!-- LEWA KOLUMNA (TEKST) -->
-    <div class="about-text">
+    <img class="fade-slide active" src="images/1.jpg" alt="">
+    <img class="fade-slide" src="images/2.jpg" alt="">
+    <img class="fade-slide" src="images/3.jpg" alt="">
+    <img class="fade-slide" src="images/4.jpg" alt="">
+    <img class="fade-slide" src="images/5.jpg" alt="">
+    <img class="fade-slide" src="images/7.jpg" alt="">
+    <img class="fade-slide" src="images/8.jpg" alt="">
+    <img class="fade-slide" src="images/9.jpg" alt="">
+    <img class="fade-slide" src="images/10.jpg" alt="">
+    <img class="fade-slide" src="images/11.jpg" alt="">
+    <img class="fade-slide" src="images/12.jpg" alt="">
+    <img class="fade-slide" src="images/13.jpg" alt="">
+    <img class="fade-slide" src="images/14.jpg" alt="">
 
-      <h3>Kim jesteśmy?</h3>
+    <!-- CIEMNA WARSTWA -->
+    <div class="about-overlay"></div>
 
-      <p>
-        Nazywamy się Eliza i Marek — uwielbiamy samodzielnie planować nasze podróże i odkrywać nieznane nam dotąd miejsca.
-        Testujemy, sprawdzamy i pokazujemy, jak podróżować taniej, prościej i bez stresu.
-      </p>
+  </div>
+
+  <!-- TEKST NA TLE -->
+ <div class="about-card" id="aboutCard">
+
+  <div class="about-card-content">
+
+    <h2>Kim jesteśmy?</h2>
+
+    <p class="intro">
+      Nazywamy się Eliza i Marek — uwielbiamy samodzielnie planować nasze podróże i&nbsp;odkrywać nieznane nam dotąd miejsca. <br>Testujemy, sprawdzamy i&nbsp;pokazujemy, jak podróżować taniej, prościej i&nbsp;bez&nbsp;stresu.
+    </p>
+
+    <button class="read-btn" id="readBtn">
+      Czytaj więcej
+    </button>
+
+    <div class="full-content">
 
       <h3>Nasza historia</h3>
 
-      <p>
-        Jesteśmy małżeństwem od października 2025 roku — i właśnie podróże stały się jednym z&nbsp;najpiękniejszych elementów naszej wspólnej historii.
-      </p>
+      <p>Jesteśmy małżeństwem od października 2025 roku — i&nbsp;właśnie podróże stały się jednym z&nbsp;najpiękniejszych elementów naszej wspólnej historii.</p>
 
-      <p>
-        W podróż poślubną wyruszyliśmy na Wyspy Zielonego Przylądka. To miejsce totalnie nas zachwyciło: spokojem, klimatem, ludźmi i niezwykłą różnorodnością wysp.
-      </p>
+      <p>W podróż poślubną wyruszyliśmy na Wyspy Zielonego Przylądka. To&nbsp;miejsce totalnie nas zachwyciło: spokojem, klimatem, ludźmi i&nbsp;niezwykłą różnorodnością wysp.</p>
 
-      <p>
-        Właśnie dlatego nasz pierwszy ebook powstał właśnie o Cabo Verde — chcieliśmy stworzyć przewodnik, którego sami szukaliśmy przed wyjazdem.
-      </p>
+      <p>Właśnie dlatego nasz pierwszy ebook powstał właśnie o&nbsp;Cabo Verde — chcieliśmy stworzyć przewodnik, którego sami szukaliśmy przed wyjazdem.</p>
 
-      <p>
-        Na co dzień uwielbiamy odkrywać świat razem. Kochamy podróże bliskie i dalekie, spontaniczne city breaki, jazdę na rowerze, lokalne jedzenie i poznawanie nowych kultur.
-      </p>
+      <p>Na co dzień uwielbiamy odkrywać świat razem. Kochamy podróże bliskie i&nbsp;dalekie, spontaniczne city breaki, jazdę na rowerze, lokalne jedzenie i&nbsp;poznawanie nowych kultur.</p>
 
-      <p>
-        Niedawno wróciliśmy ze wspólnego wyjazdu do Rzymu, gdzie godzinami spacerowaliśmy klimatycznymi uliczkami, odkrywając miejsca, których nie znajdzie się w typowych przewodnikach.
-      </p>
+      <p>Niedawno wróciliśmy ze wspólnego wyjazdu do&nbsp;Rzymu, gdzie godzinami spacerowaliśmy klimatycznymi uliczkami, odkrywając miejsca, których nie znajdzie się w typowych przewodnikach.</p>
 
-      <p>
-        Tworząc nasze materiały, chcemy pokazywać podróże w autentyczny sposób — bez sztuczności, za&nbsp;to&nbsp;z&nbsp;praktycznymi wskazówkami, gotowymi planami i miejscami, które naprawdę warto zobaczyć.
-      </p>
-
-    </div>
-
-    <!-- PRAWA KOLUMNA (FADE SLIDER) -->
-    <div class="about-fade-slider">
-
-      <img class="fade-slide active" src="images/1.jpg" alt="">
-      <img class="fade-slide" src="images/2.jpg" alt="">
-      <img class="fade-slide" src="images/3.jpg" alt="">
-      <img class="fade-slide" src="images/4.jpg" alt="">
-      <img class="fade-slide" src="images/5.jpg" alt="">
-      <img class="fade-slide" src="images/7.jpg" alt="">
-      <img class="fade-slide" src="images/8.jpg" alt="">
-      <img class="fade-slide" src="images/9.jpg" alt="">
-      <img class="fade-slide" src="images/10.jpg" alt="">
-      <img class="fade-slide" src="images/11.jpg" alt="">
-      <img class="fade-slide" src="images/12.jpg" alt="">
-      <img class="fade-slide" src="images/13.jpg" alt="">
-      <img class="fade-slide" src="images/14.jpg" alt="">
+      <p>Tworząc nasze materiały, chcemy pokazywać podróże w autentyczny sposób — bez sztuczności, za to z praktycznymi wskazówkami, gotowymi planami i&nbsp;miejscami, które naprawdę warto zobaczyć.</p>
 
     </div>
 
   </div>
 
+</div>
 </section>
 
 <!-- STOPKA -->
@@ -173,5 +170,22 @@
   }, 3000);
 </script>
 
+
+<script>
+  const aboutCard = document.getElementById("aboutCard");
+  const readBtn = document.getElementById("readBtn");
+
+  readBtn.addEventListener("click", () => {
+
+    aboutCard.classList.toggle("active");
+
+    if (aboutCard.classList.contains("active")) {
+      readBtn.textContent = "Zwiń";
+    } else {
+      readBtn.textContent = "Czytaj więcej";
+    }
+
+  });
+</script>
 </body>
 </html>
