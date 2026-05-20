@@ -85,7 +85,7 @@ img {
   padding: 12px 22px;
   border-radius: 999px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 20px;
   transition: 0.25s ease;
   margin-right: 30px;
   white-space: nowrap;
@@ -95,6 +95,29 @@ img {
   background: #0f3b33;
   transform: translateY(-2px);
 }
+.know-more-btn {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  background: #008B8B;
+  color: white;
+  text-decoration: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.25s ease;
+  margin: 20px auto 0 auto;
+  white-space: nowrap;
+}
+
+.know-more-btn:hover {
+  background: #0f3b33;
+  transform: translateY(-2px);
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -132,8 +155,8 @@ img {
 .footer {
   background: #1b7a5c;
   color: #fff;
-  padding: 60px 5px 20px;
-  margin-top: 30px;
+  padding: 40px 5px 20px;
+  margin-top: 10px;
 }
 
 /* UKŁAD  */
@@ -760,6 +783,64 @@ button:hover {
   transform: rotate(45deg); /* + zmienia się w X */
 }
 
+/* ===== EBOOK HERO ===== */
+
+.ebook-hero {
+  padding: 60px 30px;
+}
+
+.ebook-hero-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 200px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* OKŁADKA */
+.ebook-cover {
+  width: 500px;
+  max-width: 100%;
+  margin-left: -70px; /* odsunięcie od lewego brzegu */
+  border-radius: 24px; /* zaokrąglone rogi */
+  box-shadow: 0 14px 35px rgba(0,0,0,0.18);
+  flex-shrink: 0;
+}
+
+/* KOLUMNA TEKSTOWA */
+.ebook-hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 1050px;
+  padding-top: 10px;
+}
+
+/* NAGŁÓWEK */
+.ebook-hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 55px;
+  line-height: 1.1;
+  margin-top: 0;
+  margin-bottom: 28px;
+  color: #008B8B;
+}
+
+/* AKAPIT */
+.ebook-hero-text p {
+  font-size: 22px;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 35px;
+}
+
+/* BUTTON */
+#stripe-buy-btn {
+  width: fit-content;
+  padding: 16px 34px;
+  font-size: 20px;
+}
 /* =========================
    RESPONSIVE STYLES
    Tablets, phones and non-classical monitor layouts
