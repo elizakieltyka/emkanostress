@@ -201,6 +201,11 @@ img {
   color: #fff;
 }
 
+.footer-box a[href^="mailto:"] {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
 .footer-box:nth-child(1) {
   justify-self: start;
   text-align: center;
@@ -271,22 +276,25 @@ img {
   transform: translate(-50%, -50%);
   text-align: center;
   color: white;
+  width: min(92vw, 1000px);
   max-width: 1000px;
   padding: 20px;
+  overflow-wrap: normal;
   z-index: 2; 
 }
 
 .hero-overlay h2 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
-  font-size: 50px;
+  font-size: clamp(42px, 3.3vw, 50px);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .hero-overlay .hover-text {
   opacity: 0;
-  font-size:30px;
+  font-size:25px;
   transition: opacity 0.4s ease;
 }
 
@@ -775,7 +783,7 @@ button:hover {
 
 /* aktywne */
 .faq-item.active .faq-answer {
-  max-height: 200px;
+  max-height: 1000px;
   padding: 0 20px 18px;
 }
 
@@ -848,15 +856,19 @@ button:hover {
 
 @media (max-width: 768px) {
   .navbar {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 18px;
     padding: 20px;
-	
   }
 
   .nav-links {
+    order: 3;
+    flex-basis: 100%;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
   }
 
 }
@@ -925,11 +937,11 @@ button:hover {
   }
 
   .hero-overlay h2 {
-    font-size: clamp(36px, 5vw, 48px);
+    font-size: clamp(30px, 3.8vw, 40px);
   }
 
   .hover-text {
-    font-size: clamp(20px, 2.4vw, 24px);
+    font-size: clamp(16px, 2vw, 20px);
   }
 
   .ebook-section {
@@ -964,18 +976,18 @@ button:hover {
   }
 
   .hero-overlay {
-    top: 50%;
-    width: min(90vw, 680px);
+    top: 52%;
+    width: min(92vw, 680px);
   }
 
   .hero-overlay h2 {
-    font-size: clamp(32px, 6vw, 42px);
+    font-size: clamp(24px, 4.6vw, 34px);
     line-height: 1.25;
   }
 
   .hover-text {
     opacity: 1;
-    font-size: clamp(18px, 3vw, 22px);
+    font-size: clamp(14px, 2.4vw, 18px);
   }
 
   .ebook-card,
@@ -1011,10 +1023,20 @@ button:hover {
 
   .footer-content {
     grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .footer-box {
+    font-size: 18px;
   }
 
   .footer-box:first-child {
-    grid-column: 1 / -1;
+    grid-column: auto;
+  }
+
+  .footer-box:nth-child(1),
+  .footer-box:nth-child(3) {
+    padding-left: 0;
   }
 }
 
@@ -1050,14 +1072,16 @@ button:hover {
 
   .hero-overlay {
     padding: 18px 12px;
+    width: 94vw;
   }
 
   .hero-overlay h2 {
-    font-size: clamp(28px, 8vw, 38px);
+    font-size: clamp(22px, 5.8vw, 28px);
+    line-height: 1.2;
   }
 
   .hover-text {
-    font-size: 18px;
+    font-size: 14px;
     line-height: 1.45;
   }
 
@@ -1114,45 +1138,21 @@ button:hover {
 }
 
 @media (max-width: 560px) {
-  .navbar {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .nav-links {
-    order: 0;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-    max-width: 360px;
-    text-align: center;
-  }
-
-  .dropdown {
-    width: 100%;
-  }
-
-  .dropdown-content {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: 6px;
-  }
-
   .hero-slider {
     height: 500px;
   }
 
   .hero-overlay {
-    width: 94vw;
+    top: 52%;
+    width: 96vw;
   }
 
   .hero-overlay h2 {
-    font-size: clamp(25px, 8vw, 32px);
+    font-size: clamp(19px, 6vw, 24px);
   }
 
   .hover-text {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .blog-card img {
@@ -1174,23 +1174,31 @@ button:hover {
   }
 
   .footer-content {
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 16px;
     text-align: center;
   }
 
   .footer-box {
     align-items: center;
+    font-size: clamp(12px, 3.2vw, 14px);
+    min-width: 0;
+    padding-left: 0;
+    overflow-wrap: normal;
+  }
+
+  .footer-box a[href^="mailto:"] {
+    font-size: clamp(11px, 3vw, 13px);
   }
 }
 
 @media (max-width: 380px) {
-  .nav-links {
-    grid-template-columns: 1fr;
-  }
-
   .hero-slider {
     height: 460px;
+  }
+
+  .hero-overlay h2 {
+    font-size: clamp(18px, 5.8vw, 22px);
   }
 
   .ebook-card {
@@ -1199,6 +1207,28 @@ button:hover {
 
   .success-card h1 {
     font-size: 30px;
+  }
+}
+
+@media (max-height: 650px) and (orientation: landscape) {
+  .hero-slider {
+    height: max(420px, 100vh);
+  }
+
+  .hero-overlay {
+    top: 54%;
+    width: 94vw;
+    padding: 12px;
+  }
+
+  .hero-overlay h2 {
+    font-size: clamp(18px, 3.5vw, 28px);
+    line-height: 1.15;
+  }
+
+  .hover-text {
+    font-size: clamp(11px, 1.9vw, 14px);
+    line-height: 1.25;
   }
 }
 
@@ -1212,7 +1242,7 @@ button:hover {
 /* =========================
    MOBILE NAVBAR
 ========================= */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .navbar {
     position: relative;
     flex-direction: row;
@@ -1225,10 +1255,20 @@ button:hover {
 
   .logo {
     order: 1;
+    flex: 0 0 auto;
   }
 
   .logo img {
-    height: 64px;
+    height: clamp(60px, 9vw, 72px);
+    margin-left: 0;
+  }
+
+  .nav-buy-btn {
+    order: 2;
+    flex: 0 0 auto;
+    margin: 0 0 0 auto;
+    padding: 10px clamp(12px, 2.4vw, 18px);
+    font-size: clamp(14px, 2.4vw, 18px);
   }
 
   .nav-toggle {
@@ -1246,7 +1286,7 @@ button:hover {
     gap: 6px;
     width: 44px;
     height: 44px;
-    margin-left: 12px;
+    margin-left: 8px;
     padding: 8px;
     cursor: pointer;
   }
