@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="images/logok1.png">
-<title>Emka No Stress</title>
+<title>Regulamin | Emka No Stress</title>
 
 <!-- Preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,15 +40,67 @@
 
 <link rel="stylesheet" href="style.css">
 
-<script>
-window.location.replace("/");
-</script>
 </head>
+
 <body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <!-- LOGO -->
+  <div class="logo">
+  <a href="index.html">
+  <img src="images/logok.png" alt="Logo">
+</a>
+  </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+
+  <label for="nav-toggle" class="nav-toggle-label" aria-label="Otwórz menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <!-- MENU -->
+  <div class="nav-links">
+
+    <a href="index.html">Start</a>
+
+    <div class="dropdown">
+      <a href="ebooki.html">E-booki</a>
+
+      <div class="dropdown-content">
+        <a href="cv_ebook.html">Cabo Verde</a>
+      </div>
+    </div>
+
+    <a href="blog.html">Blog</a>
+    <a href="onas.html">O nas</a>
+    <a href="kontakt.html">Kontakt</a>
+
+  </div>
+
+  <!-- BUTTON -->
+  <a href="cv_ebook.html" class="nav-buy-btn">
+    KUP E-BOOKA!
+  </a>
+
+</div>
+</div>
+
+<section class="section">
+  <h2>Regulamin</h2>
+  <p>
+    Treść regulaminu zostanie uzupełniona.
+  </p>
+</section>
+
 <footer class="footer">
 
   <div class="footer-content">
 
+    <!-- LEWA STRONA -->
     <div class="footer-box">
       <h3>Emka No Stress</h3>
       <p>
@@ -56,6 +108,7 @@ window.location.replace("/");
       </p>
     </div>
 
+    <!-- MENU -->
     <div class="footer-box">
       <a href="index.html">Start</a>
       <a href="ebooki.html">E-booki</a>
@@ -64,12 +117,17 @@ window.location.replace("/");
       <a href="kontakt.html">Kontakt</a>
     </div>
 
+    <!-- KONTAKT -->
     <div class="footer-box">
       Skontaktuj się z nami
-      <a href="mailto:info@emkanostress.com">info@emkanostress.com</a>
+
+      <a href="mailto:info@emkanostress.com">
+info@emkanostress.com
+      </a>
       <br>
       <a href="regulamin.html">Regulamin</a>
       <a href="polityka.html">Polityka prywatności</a>
+
     </div>
 
   </div>
@@ -79,5 +137,6 @@ window.location.replace("/");
   </div>
 
 </footer>
+
 </body>
 </html>

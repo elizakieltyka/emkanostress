@@ -21,66 +21,12 @@ img {
   height: auto;
 }
 
-.hero-slider {
-  position: relative;
-  width: 100%;
-  height: 950px;
-  overflow: hidden;
-}
-
-/* wszystkie zdjęcia */
-.slide {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
-/* aktywne zdjęcie */
-.slide.active {
-  opacity: 1;
-}
-
-/* ciemna warstwa */
-.hero-slider::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-}
-
-
-
-/* TEKST NA OBRAZIE srodku */
-.hero-overlay {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  color: white;
-  max-width: 1000px;
-  padding: 20px;
-  z-index: 2; 
-}
-
-.hero-overlay .hover-text {
-  opacity: 0;
-  font-size:30px;
-  transition: opacity 0.4s ease;
-}
-
-/* pokazuj po najechaniu na CAŁY HERO */
-.hero-slider:hover .hover-text {
-  opacity: 1;
-}
-
 /* =========================
-   NAVBAR
+   COMMON CLASSES
+   Used across many HTML files
 ========================= */
+
+/* ===== NAVBAR ===== */
 .navbar {
   display: flex;
   background: #cffff0; 
@@ -128,6 +74,11 @@ img {
 }
 
 .nav-buy-btn {
+  display: inline-flex;
+  flex: 0 0 auto;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
   background: #008B8B;
   color: white;
   text-decoration: none;
@@ -177,114 +128,12 @@ img {
   display: block;
 }
 
-/* =========================
-   HERO IMAGE
-========================= */
-.full-image {
-  width: 100%;
-  height: 950px;
-  background: url('images/tlo4.webp') center/cover no-repeat;
-  position: relative;
-}
-
-/* CIEMNA WARSTWA */
-.full-image::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-}
-
-
-
-.hero-overlay h2 {
-  font-family: 'Cormorant Garamond', serif;
-  font-weight: 600;
-  font-size: 50px;
-  margin: 0;
-  line-height: 1.4;
-}
-
-.hover-text {
-  font-family: 'Cormorant Garamond', serif;
-  margin-top: 20px;
-  font-size: 25px;
-  opacity: 0;
-  transition: 0.4s ease;
-}
-
-/* hover poprawiony */
-.full-image:hover .hover-text {
-  opacity: 1;
-}
-
-/* =========================
-   HERO (opcjonalny niżej)
-========================= */
-.hero {
-  height: 80vh;
-  background: url('images/hero.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 60px;
-  color: white;
-}
-
-.hero h1 {
-  font-size: 48px;
-  margin: 0;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-top: 10px;
-  max-width: 500px;
-}
-
-.hero button {
-  margin-top: 20px;
-  padding: 12px 20px;
-  border: none;
-  background: #fff;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-/* =========================
-   MOBILE
-========================= */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-	
-  }
-
-  .nav-links {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .hero {
-    padding: 20px;
-    text-align: center;
-    align-items: center;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-}
-
 /* ===== FOOTER (MIĘTOWY) ===== */
 .footer {
   background: #1b7a5c;
   color: #fff;
   padding: 60px 5px 20px;
-  margin-top: 80px;
+  margin-top: 30px;
 }
 
 /* UKŁAD  */
@@ -299,6 +148,7 @@ img {
 /* KOLUMNY */
 .footer-box {
   display: flex;
+  font-size: 20px;
   flex-direction: column;
   gap: 10px; /* równe odstępy między elementami */
 }
@@ -313,7 +163,6 @@ img {
 /* TEKST */
 .footer-box p {
   margin: 0;
-  font-size: 14px;
   line-height: 1.6;
   color: rgba(255,255,255,0.85);
 }
@@ -322,7 +171,6 @@ img {
 .footer-box a {
   text-decoration: none;
   color: rgba(255,255,255,0.85);
-  font-size: 14px;
   transition: 0.2s;
 }
 
@@ -332,7 +180,7 @@ img {
 
 .footer-box:nth-child(1) {
   justify-self: start;
-  text-align: left;
+  text-align: center;
   padding-left: 75px;
 }
 
@@ -342,9 +190,8 @@ img {
 }
 
 .footer-box:nth-child(3) {
-  justify-self: end;
-  text-align: left;
-  padding-right: 75px;
+  text-align: center;
+  padding-left: 45px;
 }
 /* DÓŁ STOPKI */
 .footer-bottom {
@@ -354,6 +201,83 @@ img {
   color: rgba(255,255,255,0.6);
   border-top: 1px solid rgba(255,255,255,0.15);
   padding-top: 15px;
+}
+
+/* =========================
+   LESS COMMON CLASSES
+   Page-specific and smaller shared sections
+========================= */
+
+/* ===== HOME HERO ===== */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 950px;
+  overflow: hidden;
+}
+
+/* wszystkie zdjęcia */
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* aktywne zdjęcie */
+.slide.active {
+  opacity: 1;
+}
+
+/* ciemna warstwa */
+.hero-slider::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+/* TEKST NA OBRAZIE srodku */
+.hero-overlay {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  max-width: 1000px;
+  padding: 20px;
+  z-index: 2; 
+}
+
+.hero-overlay h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  font-size: 50px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.hero-overlay .hover-text {
+  opacity: 0;
+  font-size:30px;
+  transition: opacity 0.4s ease;
+}
+
+.hover-text {
+  font-family: 'Cormorant Garamond', serif;
+  margin-top: 20px;
+  font-size: 25px;
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+/* pokazuj po najechaniu na CAŁY HERO */
+.hero-slider:hover .hover-text {
+  opacity: 1;
 }
 
 /* ===== O NAS NOWY UKŁAD ===== */
@@ -491,16 +415,6 @@ img {
 
 
 
-.contact-alt a {
-  color: #0f3b33;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.contact-alt a:hover {
-  text-decoration: underline;
-}
-
 /* ===== BLOG ===== */
 .blog-intro {
   max-width: 900px;
@@ -631,7 +545,7 @@ img {
 }
 
 /* BUTTON NORMALNIE POD TEKSTEM */
-.ebook-btn {
+.send-message-btn {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -646,7 +560,7 @@ img {
   transition: 0.2s;
 }
 
-.ebook-btn:hover {
+.send-message-btn:hover {
   background: #5fd3b1;
   transform: translateY(-2px);
 }
@@ -665,15 +579,6 @@ img {
   color: #0f3b33;
 }
 
-.list {
-  margin-top: 20px;
-  line-height: 2;
-}
-
-.cta {
-  text-align: center;
-}
-
 .buy-btn {
   display: inline-block;
   margin-top: 20px;
@@ -683,35 +588,6 @@ img {
   text-decoration: none;
   font-weight: bold;
   border-radius: 10px;
-}
-
-.buy-btn.big {
-  font-size: 18px;
-  padding: 18px 32px;
-}
-
-.contact-hero {
-  background: url('images/kontakt-tlo.jpg') center/cover no-repeat;
-  height: 40vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  position: relative;
-}
-
-.contact-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
-}
-
-.contact-hero h1 {
-  position: relative;
-  font-size: 42px;
-  font-family: 'Cormorant Garamond', serif;
 }
 
 .contact-section {
@@ -754,14 +630,6 @@ button {
 button:hover {
   background: #5fd3b1;
 }
-
-.contact-alt {
-  margin-top: 30px;
-  font-size: 14px;
-  color: #666;
-}
-
-
 
 .success-wrapper {
   min-height: 70vh;
@@ -820,15 +688,96 @@ button:hover {
   color: #666;
 }
 
-.error-message {
-  color: #b00020;
-  font-size: 20px;
-  margin-top: 20px;
-}
-
 .success-icon {
   font-size: 70px;
   margin-bottom: 20px;
+}
+
+/* ===== FAQ ===== */
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size:40px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #008B8B;
+}
+
+.faq {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+/* pytanie */
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 18px 20px;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0f3b33;
+}
+
+/* plusik */
+.icon {
+  font-size: 22px;
+  transition: transform 0.3s ease;
+}
+
+/* odpowiedź */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  font-size: 20px;
+  color: #444;
+  line-height: 1.6;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+}
+
+/* aktywne */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 0 20px 18px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg); /* + zmienia się w X */
+}
+
+/* =========================
+   RESPONSIVE STYLES
+   Tablets, phones and non-classical monitor layouts
+========================= */
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+	
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
 }
 
 @media (max-width: 900px) {
@@ -847,12 +796,8 @@ button:hover {
   }
 }
 
-/* =========================
-   RESPONSIVE LAYOUT
-========================= */
 @media (max-width: 1400px) {
-  .hero-slider,
-  .full-image {
+  .hero-slider {
     height: min(760px, 78vh);
   }
 
@@ -890,8 +835,7 @@ button:hover {
     justify-content: center;
   }
 
-  .hero-slider,
-  .full-image {
+  .hero-slider {
     height: min(680px, 74vh);
   }
 
@@ -920,7 +864,7 @@ button:hover {
     width: min(360px, 36vw);
   }
 
-  .ebook-btn {
+  .send-message-btn {
     margin: 28px 0 0;
   }
 
@@ -934,17 +878,7 @@ button:hover {
 }
 
 @media (max-width: 900px) {
-  .start-bar {
-    padding: 20px 16px;
-  }
-
-  .start-bar h2 {
-    font-size: clamp(27px, 5vw, 32px);
-    line-height: 1.2;
-  }
-
-  .hero-slider,
-  .full-image {
+  .hero-slider {
     height: 620px;
   }
 
@@ -989,10 +923,6 @@ button:hover {
     margin: 60px auto;
   }
 
-  .section.dark {
-    border-radius: 16px;
-  }
-
   .footer {
     padding: 48px 28px 20px;
     margin-top: 60px;
@@ -1033,8 +963,7 @@ button:hover {
     transform: translateX(-50%);
   }
 
-  .hero-slider,
-  .full-image {
+  .hero-slider {
     height: 540px;
   }
 
@@ -1085,11 +1014,6 @@ button:hover {
     font-size: clamp(30px, 7vw, 34px);
   }
 
-  .track img {
-    width: 220px !important;
-    height: 290px !important;
-  }
-
   .success-wrapper {
     min-height: auto;
     padding: 56px 16px;
@@ -1134,8 +1058,7 @@ button:hover {
     margin-top: 6px;
   }
 
-  .hero-slider,
-  .full-image {
+  .hero-slider {
     height: 500px;
   }
 
@@ -1151,51 +1074,12 @@ button:hover {
     font-size: 16px;
   }
 
-  .start-bar h2 {
-    font-size: 26px;
-  }
-
-  .blog-categories {
-    justify-content: flex-start;
-    overflow-x: auto;
-    flex-wrap: nowrap;
-    padding-bottom: 6px;
-  }
-
-  .blog-categories span {
-    flex: 0 0 auto;
-  }
-
   .blog-card img {
     height: 210px;
   }
 
   .blog-content {
     padding: 22px;
-  }
-
-  .about-container {
-    width: 100%;
-    padding: 0 18px;
-  }
-
-  .about-container h3 {
-    font-size: 25px;
-  }
-
-  .about-container p {
-    font-size: 15.5px;
-  }
-
-  .track {
-    gap: 10px;
-    animation-duration: 45s;
-  }
-
-  .track img {
-    width: 180px !important;
-    height: 240px !important;
-    border-radius: 10px;
   }
 
   .contact-section,
@@ -1224,8 +1108,7 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
-  .hero-slider,
-  .full-image {
+  .hero-slider {
     height: 460px;
   }
 
@@ -1359,71 +1242,3 @@ button:hover {
 }
 
 
-
-/* ===== FAQ ===== */
-
-.faq-section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size:40px;
-  font-family: 'Cormorant Garamond', serif;
-  color: #008B8B;
-}
-
-.faq {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.faq-item {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  overflow: hidden;
-}
-
-/* pytanie */
-.faq-question {
-  width: 100%;
-  background: none;
-  border: none;
-  padding: 18px 20px;
-  font-size: 22px;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #0f3b33;
-}
-
-/* plusik */
-.icon {
-  font-size: 22px;
-  transition: transform 0.3s ease;
-}
-
-/* odpowiedź */
-.faq-answer {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 20px;
-  font-size: 20px;
-  color: #444;
-  line-height: 1.6;
-  transition: max-height 0.4s ease, padding 0.3s ease;
-}
-
-/* aktywne */
-.faq-item.active .faq-answer {
-  max-height: 200px;
-  padding: 0 20px 18px;
-}
-
-.faq-item.active .icon {
-  transform: rotate(45deg); /* + zmienia się w X */
-}

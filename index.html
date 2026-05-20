@@ -142,7 +142,7 @@ za połowę tej ceny!
 </p>
 		<a
 		  href="cv_ebook.html"
-		  class="ebook-btn"
+		  class="nav-buy-btn"
 		>
     Dowiedz się więcej!
 		</a>
@@ -184,6 +184,9 @@ za połowę tej ceny!
       <a href="mailto:info@emkanostress.com">
 info@emkanostress.com
       </a>
+      <br>
+      <a href="regulamin.html">Regulamin</a>
+      <a href="polityka.html">Polityka prywatności</a>
 
     </div>
 
@@ -217,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4000);
   }
 
-  const buyBtn = document.getElementById("buy-btn");
+  const buyBtn = document.getElementById("stripe-buy-btn");
 
   if (buyBtn) {
     buyBtn.addEventListener("click", async (e) => {
