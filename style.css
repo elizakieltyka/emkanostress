@@ -182,7 +182,7 @@ img {
 .full-image {
   width: 100%;
   height: 950px;
-  background: url('images/tlo4.png') center/cover no-repeat;
+  background: url('images/tlo4.webp') center/cover no-repeat;
   position: relative;
 }
 
