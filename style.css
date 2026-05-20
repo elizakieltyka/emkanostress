@@ -651,34 +651,7 @@ img {
   transform: translateY(-2px);
 }
 
-.ebook-hero-container {
-  display: flex;
-  gap: 60px;
-  align-items: center;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 20px;
-}
 
-.ebook-cover {
-  width: 480px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-.ebook-hero-text h1 {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 36px;
-  max-width: 1600px;
-  margin-top: 10px;
-  color: #008B8B;
-}
-
-.ebook-hero-text p {
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 1200px;
-}
 
 .section {
   max-width: 900px;
@@ -686,11 +659,6 @@ img {
   padding: 0 20px;
 }
 
-.section.dark {
-  background: #f1ece3;
-  padding: 60px 20px;
-  border-radius: 20px;
-}
 
 .section h2 {
   font-family: 'Cormorant Garamond', serif;
@@ -1234,19 +1202,6 @@ button:hover {
   .section {
     margin: 44px auto;
     padding: 0 16px;
-  }
-
-  .section.dark {
-    margin-left: 16px;
-    margin-right: 16px;
-    padding: 36px 18px;
-  }
-
-  input,
-  textarea,
-  select,
-  button {
-    width: 100%;
   }
 
   .footer {
