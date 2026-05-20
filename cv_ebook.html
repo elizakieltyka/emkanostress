@@ -7,9 +7,50 @@
 
 <title>Cabo Verde - E-book | Emka No Stress</title>
 
-<link rel="stylesheet" href="style.css">
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google Fonts non-blocking -->
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<!-- Fallback dla no-JS -->
+<noscript>
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap"
+  >
+</noscript>
+
+<!-- CSS non-blocking -->
+<link
+  rel="preload"
+  href="style.css"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<!-- Fallback -->
+<noscript>
+  <link rel="stylesheet" href="style.css">
+</noscript>
 
 </head>
 
@@ -208,7 +249,7 @@ Kup teraz!
 
     <div class="footer-box">
       Skontaktuj się z nami
-      <a href="mailto:kontakt@emkanostress.com">kontakt@emkanostress.com</a>
+      <a href="mailto:info@emkanostress.com">info@emkanostress.com</a>
     </div>
 
   </div>
