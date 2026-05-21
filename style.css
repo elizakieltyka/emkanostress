@@ -283,7 +283,7 @@ img {
   z-index: 2; 
 }
 
-.hero-overlay h2 {
+.hero-overlay h1 {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 600;
   font-size: clamp(42px, 3.3vw, 50px);
@@ -391,7 +391,7 @@ img {
 }
 
 /* TYTUŁ */
-.about-card h2 {
+.about-card h1 {
   margin-top: 0;
   font-size: 2rem;
 }
@@ -605,7 +605,7 @@ img {
 }
 
 
-.section h2 {
+.section h1 {
   font-family: 'Cormorant Garamond', serif;
   color: #0f3b33;
 }
@@ -936,7 +936,7 @@ button:hover {
     width: min(88vw, 760px);
   }
 
-  .hero-overlay h2 {
+  .hero-overlay h1 {
     font-size: clamp(30px, 3.8vw, 40px);
   }
 
@@ -980,7 +980,7 @@ button:hover {
     width: min(92vw, 680px);
   }
 
-  .hero-overlay h2 {
+  .hero-overlay h1 {
     font-size: clamp(24px, 4.6vw, 34px);
     line-height: 1.25;
   }
@@ -1075,7 +1075,7 @@ button:hover {
     width: 94vw;
   }
 
-  .hero-overlay h2 {
+  .hero-overlay h1 {
     font-size: clamp(22px, 5.8vw, 28px);
     line-height: 1.2;
   }
@@ -1115,8 +1115,9 @@ button:hover {
   }
 
   .ebook-content h2,
-  .ebook-hero-text h1 {
+  .ebook-hero-text h2 {
     font-size: clamp(30px, 7vw, 34px);
+	color: #008B8B;
   }
 
   .success-wrapper {
@@ -1147,7 +1148,7 @@ button:hover {
     width: 96vw;
   }
 
-  .hero-overlay h2 {
+  .hero-overlay h1 {
     font-size: clamp(19px, 6vw, 24px);
   }
 
@@ -1197,7 +1198,7 @@ button:hover {
     height: 460px;
   }
 
-  .hero-overlay h2 {
+  .hero-overlay h1 {
     font-size: clamp(18px, 5.8vw, 22px);
   }
 
@@ -1221,7 +1222,7 @@ button:hover {
     padding: 12px;
   }
 
-  .hero-overlay h2 {
+  .hero-overlay h1 {
     font-size: clamp(18px, 3.5vw, 28px);
     line-height: 1.15;
   }
