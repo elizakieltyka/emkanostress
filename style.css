@@ -1365,16 +1365,20 @@ button:hover {
     position: sticky;
     top: 0;
     z-index: 9999;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "logo buy toggle"
+      "menu menu menu";
+    column-gap: 12px;
+    row-gap: 0;
+    justify-content: stretch;
     align-items: center;
-    gap: 0;
     padding: 14px 18px;
   }
 
   .logo {
-    order: 1;
+    grid-area: logo;
     flex: 0 0 auto;
   }
 
@@ -1386,10 +1390,10 @@ button:hover {
   }
 
   .nav-buy-btn {
-    order: 2;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    grid-area: buy;
+    position: static;
+    justify-self: center;
+    transform: none;
     flex: 0 0 auto;
     margin: 0;
     padding: 10px clamp(12px, 2.4vw, 18px);
@@ -1399,7 +1403,7 @@ button:hover {
   }
 
   .nav-buy-btn:hover {
-    transform: translateX(-50%) translateY(-2px);
+    transform: translateY(-2px);
   }
 
   .nav-toggle {
@@ -1410,7 +1414,7 @@ button:hover {
   }
 
   .nav-toggle-label {
-    order: 3;
+    grid-area: toggle;
     display: flex;
     flex: 0 0 44px;
     flex-direction: column;
@@ -1451,7 +1455,7 @@ button:hover {
   }
 
   .nav-links {
-    order: 4;
+    grid-area: menu;
     display: none;
     flex-basis: 100%;
     width: 100%;
