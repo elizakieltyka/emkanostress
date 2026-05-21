@@ -13,6 +13,64 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://emkanostress.com/#organization",
+      "name": "Emka No Stress",
+      "url": "https://emkanostress.com/",
+      "logo": "https://emkanostress.com/images/logok1.png",
+      "email": "info@emkanostress.com",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Eliza Kiełtyka"
+        },
+        {
+          "@type": "Person",
+          "name": "Marek Kiełtyka"
+        }
+      ]
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://emkanostress.com/kontakt.html#contactpage",
+      "url": "https://emkanostress.com/kontakt.html",
+      "name": "Kontakt | Emka No Stress",
+      "description": "Skontaktuj się z nami. Eliza i Marek Kiełtyka Emka No Stress.",
+      "mainEntity": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://emkanostress.com/#website"
+      },
+      "inLanguage": "pl-PL"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://emkanostress.com/kontakt.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://emkanostress.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Kontakt",
+          "item": "https://emkanostress.com/kontakt.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -26,6 +84,13 @@
 	  <img src="images/logok.png" alt="Logo">
 	</a>
   </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otwórz menu">
+  <label for="nav-toggle" class="nav-toggle-label" aria-label="Otwórz menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
   <!-- MENU -->
   <nav class="nav-links">
@@ -87,39 +152,28 @@ Klikając przycisk „Wyślij wiadomość”, potwierdzasz zapoznanie się z Pol
 </section>
 </main>
 
-<!-- STOPKA -->
-
+<!-- FOOTER -->
 <footer class="footer">
 
   <div class="footer-content">
 
-    <!-- LEWA STRONA -->
-    <div class="footer-box">
-      <h3>Emka No Stress</h3>
-      <p><br>
-        Tworzymy praktyczne przewodniki podróżnicze, które pomagają <br>podróżować taniej, prościej i bez stresu.
-      </p>
+    <div class="footer-box footer-brand">
+      <b><h3>Emka No Stress</h3></b>
+      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
     </div>
 
-    <!-- MENU -->
-    <div class="footer-box">
+    <div class="footer-box footer-links">
       <a href="index.html">Start</a>
-      <a href="#ebooki">E-booki</a>
+      <a href="ebooki.html">E-booki</a>
       <a href="blog.html">Blog</a>
       <a href="onas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
-    </div>
-
-    <!-- KONTAKT -->
-    <div class="footer-box">
-      Skontaktuj się z nami
-
-	  <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
-      <br>
       <a href="regulamin.html">Regulamin</a>
       <a href="polityka.html">Polityka prywatności</a>
-
     </div>
+    <center>Tworzymy praktyczne przewodniki podróżnicze, które pomagają samodzielnie podróżować taniej, prościej i&nbsp;bez stresu.</center>
+
+
 
   </div>
 

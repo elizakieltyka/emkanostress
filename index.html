@@ -51,6 +51,63 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://emkanostress.com/#organization",
+      "name": "Emka No Stress",
+      "url": "https://emkanostress.com/",
+      "logo": "https://emkanostress.com/images/logok1.png",
+      "email": "info@emkanostress.com",
+      "description": "Praktyczne przewodniki podróżnicze pomagające podróżować taniej, prościej i bez stresu."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://emkanostress.com/#website",
+      "url": "https://emkanostress.com/",
+      "name": "Emka No Stress",
+      "inLanguage": "pl-PL",
+      "publisher": {
+        "@id": "https://emkanostress.com/#organization"
+      }
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://emkanostress.com/#site-navigation",
+      "name": ["Start", "E-booki", "Blog", "O nas", "Kontakt"],
+      "url": [
+        "https://emkanostress.com/",
+        "https://emkanostress.com/ebooki.html",
+        "https://emkanostress.com/blog.html",
+        "https://emkanostress.com/onas.html",
+        "https://emkanostress.com/kontakt.html"
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://emkanostress.com/#webpage",
+      "url": "https://emkanostress.com/",
+      "name": "Emka No Stress",
+      "description": "Praktyczne e-booki podróżnicze i poradniki jak podróżować taniej na własną rękę, prościej i bez stresu.",
+      "isPartOf": {
+        "@id": "https://emkanostress.com/#website"
+      },
+      "about": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://emkanostress.com/images/okladka.webp"
+      },
+      "inLanguage": "pl-PL"
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -65,6 +122,12 @@
 	</a>
   </div>
 
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otwórz menu">
+  <label for="nav-toggle" class="nav-toggle-label" aria-label="Otwórz menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
   <!-- MENU -->
   <nav class="nav-links">
@@ -159,37 +222,28 @@ za połowę tej ceny!
 
 
 
+<!-- FOOTER -->
 <footer class="footer">
 
   <div class="footer-content">
 
-    <!-- LEWA STRONA -->
-    <div class="footer-box">
-      <h3>Emka No Stress</h3>
-      <p>
-        Tworzymy praktyczne przewodniki podróżnicze, które pomagają <br>podróżować taniej, prościej i bez stresu.
-      </p>
+    <div class="footer-box footer-brand">
+      <b><h3>Emka No Stress</h3></b>
+      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
     </div>
 
-    <!-- MENU -->
-    <div class="footer-box">
+    <div class="footer-box footer-links">
       <a href="index.html">Start</a>
       <a href="ebooki.html">E-booki</a>
       <a href="blog.html">Blog</a>
       <a href="onas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
-    </div>
-
-    <!-- KONTAKT -->
-    <div class="footer-box">
-      Skontaktuj się z nami
-
-      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
-      <br>
       <a href="regulamin.html">Regulamin</a>
       <a href="polityka.html">Polityka prywatności</a>
-
     </div>
+    <center>Tworzymy praktyczne przewodniki podróżnicze, które pomagają samodzielnie podróżować taniej, prościej i&nbsp;bez stresu.</center>
+
+
 
   </div>
 

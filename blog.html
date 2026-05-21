@@ -45,6 +45,103 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://emkanostress.com/#organization",
+      "name": "Emka No Stress",
+      "url": "https://emkanostress.com/",
+      "logo": "https://emkanostress.com/images/logok1.png",
+      "email": "info@emkanostress.com"
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://emkanostress.com/blog.html#blog",
+      "url": "https://emkanostress.com/blog.html",
+      "name": "Blog | Emka No Stress",
+      "description": "Praktyczne porady jak podróżować taniej na własną rękę, prościej i bez stresu.",
+      "publisher": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "inLanguage": "pl-PL",
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "5 rzeczy, które warto sprawdzić przed wyjazdem za granicę",
+          "description": "Krótka lista, która oszczędzi ci nerwów przed podróżą.",
+          "image": "https://emkanostress.com/images/blog1.webp",
+          "author": {
+            "@id": "https://emkanostress.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://emkanostress.com/#organization"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Najczęstsze błędy podczas rezerwacji noclegu",
+          "description": "Na co uważać, żeby nie przepłacić i nie mieć niespodzianek na miejscu.",
+          "image": "https://emkanostress.com/images/blog2.webp",
+          "author": {
+            "@id": "https://emkanostress.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://emkanostress.com/#organization"
+          }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Co spakować na 7 dni",
+          "description": "Minimalizm w podróży - lista rzeczy, które naprawdę się przydają.",
+          "image": "https://emkanostress.com/images/blog3.webp",
+          "author": {
+            "@id": "https://emkanostress.com/#organization"
+          },
+          "publisher": {
+            "@id": "https://emkanostress.com/#organization"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://emkanostress.com/blog.html#webpage",
+      "url": "https://emkanostress.com/blog.html",
+      "name": "Blog | Emka No Stress",
+      "description": "Praktyczne porady jak podróżować taniej na własną rękę, prościej i bez stresu.",
+      "mainEntity": {
+        "@id": "https://emkanostress.com/blog.html#blog"
+      },
+      "isPartOf": {
+        "@id": "https://emkanostress.com/#website"
+      },
+      "inLanguage": "pl-PL"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://emkanostress.com/blog.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://emkanostress.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://emkanostress.com/blog.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -58,6 +155,13 @@
 	  <img src="images/logok.png" alt="Logo">
 	</a>
   </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otwórz menu">
+  <label for="nav-toggle" class="nav-toggle-label" aria-label="Otwórz menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
   <!-- MENU -->
   <nav class="nav-links">
@@ -130,39 +234,28 @@
 </section>
 </main>
 
-<!-- STOPKA -->
-
+<!-- FOOTER -->
 <footer class="footer">
 
   <div class="footer-content">
 
-    <!-- LEWA STRONA -->
-    <div class="footer-box">
-      <h3>Emka No Stress</h3>
-      <p>
-        Tworzymy praktyczne przewodniki podróżnicze, które pomagają <br>podróżować taniej, prościej i&nbsp;bez stresu.
-      </p>
+    <div class="footer-box footer-brand">
+      <b><h3>Emka No Stress</h3></b>
+      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
     </div>
 
-    <!-- MENU -->
-    <div class="footer-box">
+    <div class="footer-box footer-links">
       <a href="index.html">Start</a>
       <a href="ebooki.html">E-booki</a>
       <a href="blog.html">Blog</a>
       <a href="onas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
-    </div>
-
-    <!-- KONTAKT -->
-    <div class="footer-box">
-      Skontaktuj się z nami
-
-      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
-      <br>
       <a href="regulamin.html">Regulamin</a>
       <a href="polityka.html">Polityka prywatności</a>
-
     </div>
+    <center>Tworzymy praktyczne przewodniki podróżnicze, które pomagają samodzielnie podróżować taniej, prościej i&nbsp;bez stresu.</center>
+
+
 
   </div>
 
@@ -173,3 +266,4 @@
 </footer>
 </body>
 </html>
+

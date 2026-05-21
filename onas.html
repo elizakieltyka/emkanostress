@@ -45,6 +45,69 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://emkanostress.com/#organization",
+      "name": "Emka No Stress",
+      "url": "https://emkanostress.com/",
+      "logo": "https://emkanostress.com/images/logok1.png",
+      "email": "info@emkanostress.com",
+      "founder": [
+        {
+          "@type": "Person",
+          "name": "Eliza Kiełtyka"
+        },
+        {
+          "@type": "Person",
+          "name": "Marek Kiełtyka"
+        }
+      ],
+      "description": "Twórcy praktycznych przewodników podróżniczych dla osób planujących samodzielne podróże."
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://emkanostress.com/onas.html#aboutpage",
+      "url": "https://emkanostress.com/onas.html",
+      "name": "O nas | Emka No Stress",
+      "description": "Dlaczego z nami odbędziesz swoją wymarzoną podróż bez stresu i zaoszczędzisz mnóstwo pieniędzy.",
+      "mainEntity": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "isPartOf": {
+        "@id": "https://emkanostress.com/#website"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://emkanostress.com/images/1.jpg"
+      },
+      "inLanguage": "pl-PL"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://emkanostress.com/onas.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://emkanostress.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "O nas",
+          "item": "https://emkanostress.com/onas.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
@@ -58,6 +121,13 @@
 	  <img src="images/logok.png" alt="Logo">
 	</a>
   </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otwórz menu">
+  <label for="nav-toggle" class="nav-toggle-label" aria-label="Otwórz menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
   <!-- MENU -->
   <nav class="nav-links">
@@ -149,34 +219,28 @@
 </section>
 </main>
 
-<!-- STOPKA -->
+<!-- FOOTER -->
 <footer class="footer">
 
   <div class="footer-content">
 
-    <div class="footer-box">
-      <h3>Emka No Stress</h3>
-      <p>
-        Tworzymy praktyczne przewodniki podróżnicze, które pomagają <br>
-        podróżować taniej, prościej i bez stresu.
-      </p>
+    <div class="footer-box footer-brand">
+      <b><h3>Emka No Stress</h3></b>
+      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
     </div>
 
-    <div class="footer-box">
+    <div class="footer-box footer-links">
       <a href="index.html">Start</a>
       <a href="ebooki.html">E-booki</a>
       <a href="blog.html">Blog</a>
       <a href="onas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
-    </div>
-
-    <div class="footer-box">
-      Skontaktuj się z nami
-	  <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
-      <br>
       <a href="regulamin.html">Regulamin</a>
       <a href="polityka.html">Polityka prywatności</a>
     </div>
+    <center>Tworzymy praktyczne przewodniki podróżnicze, które pomagają samodzielnie podróżować taniej, prościej i&nbsp;bez stresu.</center>
+
+
 
   </div>
 
@@ -217,3 +281,4 @@
 </script>
 </body>
 </html>
+

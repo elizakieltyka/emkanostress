@@ -44,6 +44,54 @@
 
 <link rel="stylesheet" href="style.css">
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://emkanostress.com/#organization",
+      "name": "Emka No Stress",
+      "url": "https://emkanostress.com/",
+      "logo": "https://emkanostress.com/images/logok1.png",
+      "email": "info@emkanostress.com"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://emkanostress.com/success.html#webpage",
+      "url": "https://emkanostress.com/success.html",
+      "name": "Płatność zakończona | Emka No Stress",
+      "description": "Płatność zakończona pomyślnie.",
+      "isPartOf": {
+        "@id": "https://emkanostress.com/#website"
+      },
+      "publisher": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "inLanguage": "pl-PL"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://emkanostress.com/success.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Start",
+          "item": "https://emkanostress.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Płatność zakończona",
+          "item": "https://emkanostress.com/success.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 
 
 </head>
@@ -57,6 +105,13 @@
 	  <img src="images/logok.png" alt="Logo">
 	</a>
   </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Otwórz menu">
+  <label for="nav-toggle" class="nav-toggle-label" aria-label="Otwórz menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
   <nav class="nav-links">
     <a href="index.html">Start</a>
@@ -138,30 +193,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   <div class="footer-content">
 
-    <div class="footer-box">
-      <h3>Emka No Stress</h3>
-      <p>
-        Tworzymy praktyczne przewodniki podróżnicze,
-        które pomagają podróżować taniej,
-        prościej i bez stresu.
-      </p>
+    <div class="footer-box footer-brand">
+      <b><h3>Emka No Stress</h3></b>
+      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
     </div>
 
-    <div class="footer-box">
+    <div class="footer-box footer-links">
       <a href="index.html">Start</a>
       <a href="ebooki.html">E-booki</a>
       <a href="blog.html">Blog</a>
       <a href="onas.html">O nas</a>
       <a href="kontakt.html">Kontakt</a>
-    </div>
-
-    <div class="footer-box">
-      Skontaktuj się z nami
-      <b><a href="mailto:info@emkanostress.com">info@emkanostress.com</a></b>
-      <br>
       <a href="regulamin.html">Regulamin</a>
       <a href="polityka.html">Polityka prywatności</a>
     </div>
+    <center>Tworzymy praktyczne przewodniki podróżnicze, które pomagają samodzielnie podróżować taniej, prościej i&nbsp;bez stresu.</center>
+
+
 
   </div>
 
