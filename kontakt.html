@@ -137,24 +137,57 @@
 
   <form action="https://formspree.io/f/xqenvjvn" method="POST">
 
-    <input type="text" name="name" placeholder="Imię" required>
+    <input type="text" name="name" placeholder="Imię" required maxlength="80" autocomplete="name">
 
-    <input type="email" name="email" placeholder="E-mail" required>
+    <input type="email" name="email" placeholder="E-mail" required maxlength="120" autocomplete="email">
 
-    <select name="topic">
-      <option>E-book</option>
-      <option>Współpraca</option>
-      <option>Inne</option>
+    <select name="topic" required>
+	  <option value="" disabled selected>Wybierz temat</option>
+      <option value="ebook">E-book</option>
+      <option value="wspolpraca">Współpraca</option>
+      <option value="inne">Inne</option>
     </select>
 
-    <textarea name="message" rows="6" placeholder="Wiadomość"></textarea>
+    <textarea name="message" rows="6" placeholder="Wiadomość" required maxlength="3000"></textarea>
+
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+
+    <label class="privacy-consent">
+      <input type="checkbox" name="privacy" required>
+      <span>Klikając przycisk „Wyślij wiadomość”, potwierdzasz zapoznanie się z Polityką prywatności oraz jej akceptację.</span>
+    </label>
 
     <button type="submit" class="know-more-btn">Wyślij wiadomość</button>
-  <p>
-Klikając przycisk „Wyślij wiadomość”, potwierdzasz zapoznanie się z Polityką prywatności oraz jej akceptację.
-  </p>
   </form>
 </main>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const messages = {
+    name: "Proszę wpisać imię.",
+    email: "Proszę wpisać poprawny adres e-mail.",
+    topic: "Proszę wybrać temat wiadomości.",
+    message: "Proszę wpisać wiadomość.",
+    privacy: "Proszę zaznaczyć, jeśli chcesz przesłać wiadomość."
+  };
+
+  document.querySelectorAll("[required]").forEach((field) => {
+    const message = messages[field.name] || "Proszę uzupełnić to pole.";
+
+    field.addEventListener("invalid", () => {
+      field.setCustomValidity(message);
+    });
+
+    field.addEventListener("input", () => {
+      field.setCustomValidity("");
+    });
+
+    field.addEventListener("change", () => {
+      field.setCustomValidity("");
+    });
+  });
+});
+</script>
 
 <!-- FOOTER -->
 <footer class="footer">
