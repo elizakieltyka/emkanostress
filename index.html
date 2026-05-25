@@ -128,7 +128,7 @@
   <!-- LOGO -->
   <div class="logo">
 	<a href="/">
-	  <img src="images/logok.png" alt="Logo">
+	  <img src="images/logok.png" alt="Emka No Stress logo">
 	</a>
   </div>
 
@@ -284,29 +284,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }, 4000);
   }
-
-  const buyBtn = document.getElementById("stripe-buy-btn");
-
-  if (buyBtn) {
-    buyBtn.addEventListener("click", async (e) => {
-
-      e.preventDefault();
-
-      try {
-        const res = await fetch("https://api.emkanostress.com/create-checkout");
-
-        const data = await res.json();
-
-        if (data.url) {
-          window.location.href = data.url;
-        }
-
-      } catch (err) {
-        console.error(err);
-      }
-    });
-  }
-
 });
 </script>
 

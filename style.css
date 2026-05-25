@@ -1054,13 +1054,6 @@ button:hover {
   margin-bottom: 5px;
 }
 
-/* BUTTON */
-#stripe-buy-btn {
-  width: fit-content;
-  padding: 16px 34px;
-  font-size: 20px;
-}
-
 .ebook-dodatek {
   margin-top: 50px;      /* obniża całą sekcję */
   text-align: left; 
@@ -1341,7 +1334,6 @@ margin-left:-500px;  /* wyrównanie do lewej */
     max-width: 650px;
   }
 
-  #stripe-buy-btn,
   .send-message-btn,
   .know-more-btn {
     margin-left: auto;
