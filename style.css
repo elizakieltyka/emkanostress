@@ -406,7 +406,7 @@ img {
   flex: 1;
 }
 
-.about-content h2 {
+.about-content .about-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 40px;
   color: #008B8B;
@@ -587,7 +587,7 @@ img {
   flex: 1;
 }
 
-.article-text h2 {
+.article-text .article-title {
   font-family: 'Cormorant Garamond', serif;
 
   font-size: 44px;
@@ -683,7 +683,9 @@ img {
   justify-content: flex-start;
 }
 
-.ebook-content h2 {
+.ebook-content .ebook-subtitle {
+  display: block;
+  flex: none;
   font-family: 'Cormorant Garamond', serif;
   font-size: 25px;
   margin-bottom: 5px;
@@ -771,6 +773,18 @@ img {
 .section h1 {
   font-family: 'Cormorant Garamond', serif;
   color: #0f3b33;
+}
+
+.section h1.section-subheading {
+  display: block;
+  font-family: initial;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 }
 
 .buy-btn {
@@ -905,7 +919,7 @@ button:hover {
 }
 
 /* ===== FAQ ===== */
-.faq-section h2 {
+.faq-section .faq-title {
   text-align: center;
   margin-bottom: 40px;
   font-size:40px;
@@ -1019,7 +1033,7 @@ button:hover {
 }
 
 /* PODTYTUL */
-.ebook-hero-text h2 {
+.ebook-hero-text .ebook-subtitle {
   font-family: 'Cormorant Garamond', serif;
   font-size: 29px;
   font-weight: bold;
@@ -1054,7 +1068,7 @@ margin-left:-500px;  /* wyrównanie do lewej */
   max-width: 500px;      /* opcjonalnie: kontrola szerokości */
 }
 
-.ebook-dodatek h2 {
+.ebook-dodatek .ebook-extra-title {
   font-size: 42px;
   color: #008B8B;
   font-weight: 700;
@@ -1183,7 +1197,7 @@ margin-left:-500px;  /* wyrównanie do lewej */
     gap: 14px;
   }
 
-  .about-content h2 {
+  .about-content .about-title {
     font-size: clamp(34px, 4vw, 40px);
   }
 
@@ -1207,7 +1221,7 @@ margin-left:-500px;  /* wyrównanie do lewej */
     font-size: clamp(32px, 3.6vw, 42px);
   }
 
-  .ebook-content h2 {
+  .ebook-content .ebook-subtitle {
     font-size: clamp(24px, 2.4vw, 28px);
   }
 
@@ -1300,10 +1314,10 @@ margin-left:-500px;  /* wyrównanie do lewej */
   }
 
   .ebook-content h1,
-  .ebook-content h2,
+  .ebook-content .ebook-subtitle,
   .ebook-content h3,
   .ebook-hero-text h1,
-  .ebook-hero-text h2,
+  .ebook-hero-text .ebook-subtitle,
   .ebook-dodatek {
     text-align: center;
   }
@@ -1312,7 +1326,7 @@ margin-left:-500px;  /* wyrównanie do lewej */
     font-size: clamp(34px, 6vw, 46px);
   }
 
-  .ebook-hero-text h2 {
+  .ebook-hero-text .ebook-subtitle {
     font-size: clamp(25px, 4.5vw, 31px);
   }
 
@@ -1363,7 +1377,7 @@ margin-left:-500px;  /* wyrównanie do lewej */
     width: min(420px, 100%);
   }
 
-  .article-text h2 {
+  .article-text .article-title {
     font-size: clamp(32px, 6vw, 40px);
   }
 
@@ -1580,8 +1594,8 @@ margin-left:-500px;  /* wyrównanie do lewej */
     gap: 10px;
   }
 
-  .about-content h2,
-  .faq-section h2 {
+  .about-content .about-title,
+  .faq-section .faq-title {
     font-size: clamp(32px, 8vw, 38px);
   }
 
@@ -1612,8 +1626,8 @@ margin-left:-500px;  /* wyrównanie do lewej */
     font-size: clamp(28px, 7vw, 35px);
   }
 
-  .ebook-content h2,
-  .ebook-hero-text h2 {
+  .ebook-content .ebook-subtitle,
+  .ebook-hero-text .ebook-subtitle {
     margin-top: 0;
     font-size: clamp(24px, 6vw, 30px);
   }
