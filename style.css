@@ -248,7 +248,7 @@ img {
   margin: 16px auto 0;
   max-width: 1440px;
   font-size: 13px;
-  color: rgba(255,255,255,0.6);
+  color: #fff;
   border-top: 1px solid rgba(255,255,255,0.15);
   padding-top: 10px;
 }
