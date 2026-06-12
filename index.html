@@ -14,11 +14,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Zaoszczędź nawet do 4000zł na kolejne podróże dzięki praktycznemu przewodnikowi po Cabo Verde. Jak tanio zorganizować podróż samodzielnie, prosto i bez stresu.">
+
 <meta property="og:title" content="Wyspy Zielonego Przylądka na własną rękę, praktyczny plan i konkretne wskazówki.">
 <meta property="og:description" content="Podróżuj taniej na własną rękę, prościej i bez stresu.">
 <meta property="og:image" content="https://emkanostress.com/images/okladka.webp">
 <meta property="og:url" content="https://emkanostress.com/">
-<meta property="og:type" content="website">
+<meta property="og:type" content="product">
+<meta property="product:price:amount" content="40">
+<meta property="product:price:currency" content="PLN">
 
 <link rel="canonical" href="https://emkanostress.com/">
 <link rel="icon" type="image/png" href="images/logok1.png">
@@ -63,57 +66,111 @@
 
 <script type="application/ld+json">
 {
-  "@context": "https://schema.org",
-  "@graph": [
+  "@context":"https://schema.org",
+  "@graph":[
+
     {
-      "@type": "Organization",
-      "@id": "https://emkanostress.com/#organization",
-      "name": "Emka No Stress",
-      "url": "https://emkanostress.com/",
-      "logo": "https://emkanostress.com/images/logok1.png",
-      "email": "info@emkanostress.com",
-      "description": "Praktyczne przewodniki podróżnicze pomagające podróżować taniej, prościej i bez stresu."
+      "@type":"Organization",
+      "@id":"https://emkanostress.com/#organization",
+      "name":"Emka No Stress",
+      "url":"https://emkanostress.com/",
+      "logo":"https://emkanostress.com/images/logok1.png",
+      "email":"info@emkanostress.com",
+      "description":"Praktyczne przewodniki podróżnicze pomagające podróżować taniej, prościej i bez stresu."
     },
+
     {
-      "@type": "WebSite",
-      "@id": "https://emkanostress.com/#website",
-      "url": "https://emkanostress.com/",
-      "name": "Emka No Stress",
-      "inLanguage": "pl-PL",
-      "publisher": {
-        "@id": "https://emkanostress.com/#organization"
+      "@type":"WebSite",
+      "@id":"https://emkanostress.com/#website",
+      "url":"https://emkanostress.com/",
+      "name":"Emka No Stress",
+      "inLanguage":"pl-PL",
+      "publisher":{
+        "@id":"https://emkanostress.com/#organization"
       }
     },
+
     {
-      "@type": "SiteNavigationElement",
-      "@id": "https://emkanostress.com/#site-navigation",
-      "name": ["Start", "E-booki", "Blog", "O nas", "Kontakt"],
-      "url": [
+      "@type":"WebPage",
+      "@id":"https://emkanostress.com/#webpage",
+      "url":"https://emkanostress.com/",
+      "name":"Wyspy Zielonego Przylądka na własną rękę",
+      "description":"Zaoszczędź nawet do 4000 zł dzięki praktycznemu przewodnikowi po Cabo Verde.",
+      "isPartOf":{
+        "@id":"https://emkanostress.com/#website"
+      },
+      "about":{
+        "@id":"https://emkanostress.com/#book"
+      },
+      "primaryImageOfPage":{
+        "@id":"https://emkanostress.com/#cover"
+      },
+      "inLanguage":"pl-PL"
+    },
+
+    {
+      "@type":"ImageObject",
+      "@id":"https://emkanostress.com/#cover",
+      "url":"https://emkanostress.com/images/okladka.webp",
+      "contentUrl":"https://emkanostress.com/images/okladka.webp",
+      "caption":"Okładka e-booka Cabo Verde"
+    },
+
+    {
+      "@type":"Book",
+      "@id":"https://emkanostress.com/#book",
+      "name":"Cabo Verde na własną rękę",
+      "bookFormat":"https://schema.org/EBook",
+      "image":"https://emkanostress.com/images/okladka.webp",
+      "description":"Praktyczny przewodnik po Cabo Verde pokazujący jak samodzielnie zorganizować podróż taniej i bez stresu.",
+      "inLanguage":"pl",
+      "author":{
+        "@id":"https://emkanostress.com/#organization"
+      },
+      "publisher":{
+        "@id":"https://emkanostress.com/#organization"
+      },
+      "offers":{
+        "@type":"Offer",
+        "url":"https://emkanostress.com/cv_ebook.html",
+        "price":"40",
+        "priceCurrency":"PLN",
+        "availability":"https://schema.org/InStock"
+      }
+    },
+
+    {
+      "@type":"BreadcrumbList",
+      "@id":"https://emkanostress.com/#breadcrumb",
+      "itemListElement":[
+        {
+          "@type":"ListItem",
+          "position":1,
+          "name":"Strona główna",
+          "item":"https://emkanostress.com/"
+        }
+      ]
+    },
+
+    {
+      "@type":"SiteNavigationElement",
+      "@id":"https://emkanostress.com/#navigation",
+      "name":[
+        "Start",
+        "E-booki",
+        "Blog",
+        "O nas",
+        "Kontakt"
+      ],
+      "url":[
         "https://emkanostress.com/",
         "https://emkanostress.com/ebooki.html",
         "https://emkanostress.com/blog.html",
         "https://emkanostress.com/onas.html",
         "https://emkanostress.com/kontakt.html"
       ]
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://emkanostress.com/#webpage",
-      "url": "https://emkanostress.com/",
-      "name": "Emka No Stress",
-      "description": "Zaoszczędź nawet do 4000zł na kolejne podróże dzięki praktycznemu przewodnikowi po Cabo Verde. Jak tanio zorganizować podróż samodzielnie, prosto i bez stresu.",
-      "isPartOf": {
-        "@id": "https://emkanostress.com/#website"
-      },
-      "about": {
-        "@id": "https://emkanostress.com/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://emkanostress.com/images/okladka.webp"
-      },
-      "inLanguage": "pl-PL"
     }
+
   ]
 }
 </script>
