@@ -63,19 +63,54 @@
       "@id": "https://emkanostress.com/#organization",
       "name": "Emka No Stress",
       "url": "https://emkanostress.com/",
-      "logo": "https://emkanostress.com/images/logok1.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://emkanostress.com/images/logok1.png"
+      },
       "email": "info@emkanostress.com",
+      "description": "Twórcy praktycznych przewodników podróżniczych dla osób planujących samodzielne podróże.",
+
       "founder": [
         {
-          "@type": "Person",
-          "name": "Eliza Kiełtyka"
+          "@id": "https://emkanostress.com/#eliza"
         },
         {
-          "@type": "Person",
-          "name": "Marek Kiełtyka"
+          "@id": "https://emkanostress.com/#marek"
         }
       ],
-      "description": "Twórcy praktycznych przewodników podróżniczych dla osób planujących samodzielne podróże."
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@emkanostress.com",
+        "contactType": "Kontakt bezpośredni"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://emkanostress.com/#eliza",
+      "name": "Eliza Kiełtyka",
+      "worksFor": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "url": "https://emkanostress.com/onas.html"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://emkanostress.com/#marek",
+      "name": "Marek Kiełtyka",
+      "worksFor": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "url": "https://emkanostress.com/onas.html"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://emkanostress.com/#website",
+      "url": "https://emkanostress.com/",
+      "name": "Emka No Stress",
+      "publisher": {
+        "@id": "https://emkanostress.com/#organization"
+      },
+      "inLanguage": "pl-PL"
     },
     {
       "@type": "AboutPage",
@@ -83,6 +118,9 @@
       "url": "https://emkanostress.com/onas.html",
       "name": "O nas | Emka No Stress",
       "description": "Dlaczego z nami odbędziesz swoją wymarzoną podróż bez stresu i zaoszczędzisz mnóstwo pieniędzy.",
+      "about": {
+        "@id": "https://emkanostress.com/#organization"
+      },
       "mainEntity": {
         "@id": "https://emkanostress.com/#organization"
       },
